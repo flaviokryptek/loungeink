@@ -1,2 +1,2 @@
 # tattooarialoungeink
-Site para divulgação dos serviços de uma casa de tatuagens.
+Site para divulgação dos serviços de um salão de tatuagens.
