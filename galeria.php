@@ -21,13 +21,13 @@
     </div>
     <div class="centro">
         <div class="centro-item">
-            <a class="header-title" href="index.html">TATTOOARIA LOUNGE INK</a>
+            <a class="header-title" href="index.php">TATTOOARIA LOUNGE INK</a>
         </div>
     </div>
     <div class="direita">
         <div class="direita-item">
-            <a class="header-link" href="index.html">Inicio</a>&nbsp;
-            <a class="header-link" href="galeria.html">Galeria</a>
+            <a class="header-link" href="index.php">Inicio</a>&nbsp;
+            <a class="header-link" href="galeria.php">Galeria</a>
         </div>
     </div> 
   </nav> 
@@ -35,53 +35,34 @@
 
   <div class="divisao">
     <div class="galeria-show">
-      <button type="button">ENVIAR FOTO</button>
+      <?php include 'upload.php' ?>
     </div>
   </div>
 
   <div class="main" style="background-color: transparent">
     <div class="album">
-      
+        <?php
+          include 'conexao/conecta.php';
+          $query ='SELECT * from tatuagens ORDER BY id DESC';
+          $result = mysqli_query($conn,$query);
+          if($result){
+            while($row = mysqli_fetch_assoc($result)){
+              $id = $row['id'];
+              $foto = $row['foto'];
+         
+        ?>
+
         <div class="col-album" >
           <div class="col-foto">
-            <img src="img/fotopost03.jpg">
+            <?php echo "<img src='uploads/".$foto."'>"?>
           </div>
         </div>
-        <div class="col-album" >
-          <div class="col-foto">
-            <img src="img/fotopost02.jpg">
-          </div>
-        </div>
-        <div class="col-album" >
-          <div class="col-foto">
-            <img src="img/fotopost01.jpg">
-          </div>
-        </div>
-        <div class="col-album" >
-          <div class="col-foto">
-            <img src="img/fotopost04.png">
-          </div>
-        </div>
-        <div class="col-album" >
-          <div class="col-foto">
-            <img src="img/fotopost05.jpg">
-          </div>
-        </div>
-        <div class="col-album" >
-          <div class="col-foto">
-            <img src="img/fotopost06.jpg">
-          </div>
-        </div>
-        <div class="col-album" >
-          <div class="col-foto">
-            <img src="img/fotopost01.jpg">
-          </div>
-        </div>
-        <div class="col-album" >
-          <div class="col-foto">
-            <img src="img/fotopost03.jpg">
-          </div>
-        </div>
+
+        <?php
+            }
+          }
+        mysqli_close($conn);
+        ?>
       
     </div>
   </div>
