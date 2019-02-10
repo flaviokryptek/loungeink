@@ -17,7 +17,7 @@ $(function(){
 				if ( obj.is(':first-child') ) {
 					var bg_pos = ( window_scrolltop - obj.position().top ) / divisor;
 				} else {
-					var bg_pos = ( window_scrolltop - obj.position().top + ( obj.height() - 541 ) ) / divisor;
+					var bg_pos = ( window_scrolltop - obj.position().top + ( obj.height() - 520 ) ) / divisor;
 				}
 				
 				// Modifica a posição do bg
@@ -27,7 +27,7 @@ $(function(){
 				
 				// Animação do primeiro texto
 				obj.children('.frase').css({
-					'bottom' : ( window_scrolltop - obj.position().top + 241 ) + 'px'
+					'bottom' : ( window_scrolltop - obj.position().top + 100 ) + 'px'
 				});
 				
 			} // Garante que apenas trabalhemos no elemento que está visível na tela

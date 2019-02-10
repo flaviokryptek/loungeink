@@ -4,20 +4,24 @@
 }
 body,
 html {
-    height:100%;
+
     line-height:1.5;
 }
 
 header{
-    position: absolute;
-    background-color: rgb(0, 0, 0);
-    height: 15%;
     width: 100%;
+    background-color: rgb(0, 0, 0);
+    height: 80px;
 }
-
+nav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 footer{
     background-color: #121212;
-    position: relative;
     height: 300px;
     width: 100%;
 }
@@ -42,69 +46,65 @@ a:hover{
    color: gainsboro; 
    
 }
+
 .esquerda{
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 25%;
+    position: relative;
+    width: 20%;
     height: 100%;
 }
+
 .direita{
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 15%;
+    position: relative;
+    width: 20%;
     height: 100%;
-    left: 80%;
+    
 }
+
 .centro{
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    left: 20%;
+    position: relative;
     width: 60%;
     height: 100%;
 }
+
 .esquerda-item{
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 80%;
-    width: 90%;
+    align-items: center;
+    
+    height: 100%;
+    width: 100%;
 }
+
 .direita-item{
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     text-align: right;
-    width: 80%;
+    width: 100%;
+    height: 100%;
     
 }
 .centro-item{
+    
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     width: 100%;
     height: 100%;
 }
-.logo-box{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-position: center; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-}
-.logo-box img{
-    height: 100%;
+
+.esquerda-item img{
+    height: 60px;
 }
 
 .frase{
@@ -118,21 +118,21 @@ a:hover{
 }
 .main-foto{
     width: 100%;
-    height: 100%;
+    position: relative;
+    height: 600px;
     background-attachment: fixed;
     background-size: cover;
-    background-position: 50% 0.226563px;
+    background-position: 50% 0;
     
 }
 .foto01{
     background-image: url(../img/foto01.png);
 }
 
-#main{
-    
+.main{
     background-color: #000000;
     width: 100%;
-    
+
 }
 .full-section{
     background-color: #121212;
@@ -141,25 +141,34 @@ a:hover{
 }
 
 .welcome-div1{
-    width: 100%;
-    height: 38%;
-}
-.welcome-div2{
-    background-color: #0000;
-    
-    height: 42%;
-    width: 100%;
-}
-.welcome-div3{
-    width: 100%;
-    height: 20%;
-}
-.box-div1{
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    left: 15%;
+    width: 100%;
+    height: 40%;
+}
+.welcome-div2{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42%;
+    width: 100%;
+}
+.welcome-div3{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 18%;
+}
+.box-div1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
     height: 100%;
     width: 70%;
 }
@@ -172,9 +181,10 @@ a:hover{
     width: 100%;
 }
 .box-div3{
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    top: 20%;
     height: 60%;
 }
 .welcome-title{
@@ -266,7 +276,7 @@ a:hover{
     width: 100%;
 }
 .footer-superior{
-    position: absolute;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -276,7 +286,7 @@ a:hover{
 }
 
 .footer-inferior{
-    position: absolute;
+   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -295,13 +305,16 @@ a:hover{
     font-size: 12pt;
     color: gainsboro; 
 }
-#container{
-    position: relative;
+
+#container-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
 }
-.col{
-    position: absolute;
+.coluna{
+   
     width: 33%;
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
@@ -310,45 +323,97 @@ a:hover{
     text-align: left;
 }
 
-#col-01{
-    left: 0%;
+#coluna-01{
+    position: relative;
+   
 }
-#col-02{ 
-    left: 33%;
+#coluna-02{ 
+    position: relative;
+ 
 }
-#col-03{
-    left: 66%;
+#coluna-03{
+    position: relative;
 }
 
 /*galeria.html*/
 
 .bg-galeria{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
     background-attachment: fixed;
     background-size: cover;
     background-image: url(../img/foto01.png);
 }
 
-.container{
+
+.album{
     
+    padding-right: 5%;
+    padding-left: 5%; 
+    width: 90%;
+    height: 3000px;
+}
+
+.col-album{
+
+    padding-top: 30px;
+    float: left;
+    width: 33.3333%;
+    height: 350px;
+    
+}
+
+.col-foto{
+    box-shadow: 4px 4px 16px black;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 3000px;
-    background-color: aqua;
-    opacity: 0.5;
+    overflow: hidden;
+    border-radius: .25rem;
+    width: 92%;
+    height: 92%;
+    margin: 4%;
 }
-.album{
-    display: inline-block;
+.col-foto img{
+    
+    border-radius: .25rem;
+    height: 100%;
+}
+
+.divisao{
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
-    height: 1500px;
-    background-color: rgb(0, 48, 48);
-    opacity: 0.5;
+    height: 600px;
+    width: 100%;
+}
+.galeria-show{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.2em;
+    height: 100px;
+    width: 400px;
+    
+    
+}
+.botao{
+    font-family: 'Times New Roman', Times, serif;
+    box-shadow: 4px 4px 16px black;
+    display: flex;
+    color: gainsboro;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border: none;
+    border-radius: 0.5em;
+    background-color: black;
+    width: 200px;
+    height: 50px;
+}
+.botao:hover{
+  
+    background-color: #212121;
+    font-size: 22px;
+    border-radius: 0.5em;
+    width: 220px;
+    height: 60px;
 }
