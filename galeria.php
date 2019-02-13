@@ -16,14 +16,16 @@
 
   <div class="divisao">
     <div class="galeria-show">
+      
       <form name="cadastro" method="post" enctype="multipart/form-data">
         <div>
             <p>Selecione as fotos</p>
-            <input type="file" name="foto" multiple="multiple" required>
+            <input type="file" name="foto[]" multiple="multiple" required>
             <button type="reset" name="limpar" >Limpar</button>
             <button type="submit" name="cadastrar" >Enviar</button>
         </div>
       </form>
+
       <?php include 'upload.php'?>
     </div>
   </div>
