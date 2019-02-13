@@ -1,14 +1,4 @@
 
-
-<form name="cadastro" method="post" enctype="multipart/form-data">
-    <div>
-        <p>Selecione as fotos</p>
-        <input type="file" name="foto" required>
-        <button type="reset" name="limpar" >Limpar</button>
-        <button type="submit" name="cadastrar" >Enviar</button>
-    </div>
-</form>
-
 <?php
     if(isset($_POST['cadastrar'])){
 
@@ -17,7 +7,7 @@
         //criando variaveis com os dados recebidos via POST
        
         $foto = $_FILES['foto'];
-        
+
         if(!empty($foto["name"])){
             $largura = 1920;
             $altura = 1080;
