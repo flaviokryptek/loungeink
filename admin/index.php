@@ -12,18 +12,11 @@
 <body>
   <?php 
     include 'header.php';
-    $nome = $_SESSION['nome'];
   ?>
 
   <!-- Begin page content -->
   <main role="main" class="flex-shrink-0">
     <div class="container">
-
-    <p class="lead" align="right">Usuário logado: <?php echo $nome;?> em <?php echo date('d/m/y');?></p>
-      <div class="starter-template">
-        <h1>Sistema PHP</h1>
-        <p class="lead">Utilize o menu acima para executar as ações desejadas.</p>
-      </div>
 
       <h1 class="mt-5">Sticky footer with fixed navbar</h1>
       <p class="lead">Pin a footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>main &gt; .container</code>.</p>
