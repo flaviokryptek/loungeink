@@ -2,17 +2,18 @@
 <?php
     if(isset($_POST['cadastrar'])){
 
-        include 'conexao/conecta.php';
+        include '../conexao/conecta.php';
       
         //criando variaveis com os dados recebidos via POST
        
         $foto = $_FILES['foto'];
+        $album = $_POST['album'];
 
         for ($k = 0; $k < count($foto['name']); $k++){
 
         if(!empty($foto["name"][$k])){
-            $largura = 1920;
-            $altura = 1080;
+            $largura = 4920;
+            $altura = 4080;
             $tamanho = 100000000;
             $error = array();
             
@@ -38,10 +39,10 @@
                 //gera um nome único para a imagem
                 $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
                 //caminho onde ficara a imagem
-                $caminho_imagem = "uploads/" . $nome_imagem;
+                $caminho_imagem = "../uploads/" . $nome_imagem;
                 //Faz o upload da imagem para seu respectivo caminho
                 move_uploaded_file($foto["tmp_name"][$k], $caminho_imagem);
-                $insere = "INSERT INTO tatuagens (foto) values ('$nome_imagem')";
+                $insere = "INSERT INTO tatuagens (foto, album) values ('$nome_imagem','$album')";
                 $result = mysqli_query($conn, $insere);
                 if($result){
                 echo '<p>Tattooagem enviada com sucesso!</p>';
