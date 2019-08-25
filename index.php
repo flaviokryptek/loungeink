@@ -2,10 +2,12 @@
 <html>
 
 <head>
+
   <meta charset="utf-8">
   <title>Tattooaria Lounge Ink</title>
   <link href="img/logo.jpg" rel="icon">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="css/reset.css" rel="stylesheet">
   <script src="js/jquery.js"></script>
   <script src="js/scripts.js"></script>
 

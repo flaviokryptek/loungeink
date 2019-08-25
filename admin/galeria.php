@@ -38,7 +38,7 @@
 
                 include '../conexao/conecta.php';
 
-                $query ='SELECT * from tatuagens WHERE album = "$album" ';
+                $query ='SELECT * from galeria';
                 $result = mysqli_query($conn,$query);
 
                     if($result){
@@ -49,7 +49,7 @@
 
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
-                        <img src="../img/fotopost01.jpg">
+                        <?php echo "<img src='../uploads/".$foto."'>"?>
                         
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
@@ -87,7 +87,7 @@
                         <div class="modal-body">
                         
                             <div class="form-group">
-                                <label for="exampleFormControlFile1">Escolha as fotos e o album que deseja enviar.</label>
+                                <label for="exampleFormControlFile1">Escolha as fotos e o album para enviar.</label>
                                 <input type="file" class="form-control-file" id="exampleFormControlFile1" name="foto[]" multiple="multiple">
                             </div>
                             <div class="form-check form-check-inline">

@@ -6,6 +6,7 @@
   <title>Tattooaria Lounge Ink</title>
   <link rel="icon" href="img/logo.jpg">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="css/reset.css" rel="stylesheet">
   <script src="js/jquery.js"></script>
   <script src="js/scripts.js"></script>
 </head>
@@ -15,26 +16,34 @@
   <?php include 'header.php'?>
 
   <div class="divisao">
-    <div class="galeria-show">
-      
-      <form name="cadastro" method="post" enctype="multipart/form-data">
-        <div>
-            <p>Selecione as fotos</p>
-            <input type="file" name="foto[]" multiple="multiple" required>
-            <button type="reset" name="limpar" >Limpar</button>
-            <button type="submit" name="cadastrar" >Enviar</button>
-        </div>
-      </form>
 
-      <?php include 'upload.php'?>
+    <div class="pri-divisao">
+      <div class="welcome-div1">
+        <div class="box-div1">
+          <p class="welcome-title" style="color:black; font-size: 60px">GALERIA DE FOTOS</p>
+        </div>
+      </div>
+      <div class="welcome-div2">
+        <div class="box-div2">
+          <img src="img/ornamento.png">
+        </div>
+      </div>
+      
     </div>
+
+    <div class="seg-divisao">
+      <div class="filtro">
+        <p>Filtrar por: Album</p>
+      </div>
+    </div>
+
   </div>
 
   <div class="main" style="background-color: transparent">
     <div class="album">
         <?php
           include 'conexao/conecta.php';
-          $query ='SELECT * from tatuagens ORDER BY id DESC';
+          $query ='SELECT * from galeria ORDER BY id DESC';
           $result = mysqli_query($conn,$query);
           if($result){
             while($row = mysqli_fetch_assoc($result)){
