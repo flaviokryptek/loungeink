@@ -19,10 +19,10 @@
   <body>
 
     <?php
-      include 'functions/header.php';
+      include 'header.php';
     ?>
 
-    <main role="main" class="container">
+    <main role="main" class="container" style="margin-top:100px;">
         <form name="cadastro_user" action="#" method="POST">
             <div class="form-group">
                 <label for="nome">Nome</label>

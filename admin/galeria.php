@@ -55,21 +55,10 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                 
-                                <?php 
-                                    echo "<a href='galeria.php?id=".$id."&foto=".$foto."'>
-                                    <button type='button' class='btn btn-sm btn-outline-secondary'>Excluir</button></a>";
-                                
-                                    $id = filter_input(INPUT_GET,'id',FILTER_SANITIZE_NUMBER_INT);
-                                    $foto = filter_input(INPUT_GET,'foto',FILTER_SANITIZE_STRING);
-
-                                    $excluir_foto = "DELETE FROM galeria WHERE id='$id'";
-                                    $mysqli_query = mysqli_query($conn, $excluir_foto);
-                                    
-                                    fclose($fp);
-                                    echo unlink("../uploads/$foto");
-                                    
-                                ?> 
-                                
+                                <a href="excluir_foto.php?id=<?php echo $id;?>&foto=<?php echo $foto;?>">
+                                    <button type='button' class='btn btn-sm btn-outline-secondary'>Excluir</button>
+                                </a>
+                            
                                 </div>
                                 <small class="text-muted">Album</small>
                             </div>

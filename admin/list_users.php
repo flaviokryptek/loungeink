@@ -50,12 +50,10 @@
                         <td><?php echo $nome;?></td>
                         <td><?php echo $usuario;?></td>
                         <td>
-                            <a href="edit_user.php?id=<?php echo $id;?>">
-                                <button type="button" class ="btn btn-warning btn-sm">Editar</button>
-                            </a>
-                            <a href="remove_user.php?id=<?php echo $id;?>">
-                                <button type="button" class="btn btn-danger btn-sm">Excluir</button>
-                            </a>
+                            <a href="edit_user.php?id=<?php echo $id;?>"><button type="button" class ="btn btn-warning btn-sm">Editar</button></a>
+                                                
+                            <a href="remove_user.php?id=<?php echo $id;?>"><button type="button" class="btn btn-danger btn-sm">Excluir</button></a>
+                           
                         </td>
                     </tr>
                     <?php
