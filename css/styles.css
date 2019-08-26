@@ -338,7 +338,8 @@ a:hover{
 .bg-galeria{
     background-attachment: fixed;
     background-size: cover;
-    background-image: url(../img/foto01.png);
+    background-color: #222222;
+    /*background-image: url(../img/foto01.png);*/
 }
 
 

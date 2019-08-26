@@ -26,6 +26,10 @@
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link" href="cadastro_user.php">Cadastrar</a>
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link" href="log/logout.php">Sair</a>
                 </li>
                 <li class="nav-item">
