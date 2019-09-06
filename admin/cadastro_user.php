@@ -19,7 +19,7 @@
   <body>
 
     <?php
-      include 'functions/header.php';
+        include 'functions/header.php';
     ?>
 
     <main role="main" class="container">

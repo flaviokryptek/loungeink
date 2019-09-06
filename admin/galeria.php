@@ -14,7 +14,7 @@
     <?php include 'header.php'?>
     
     <main>
-        <section class="jumbotron text-center">
+        <section class="jumbotron text-center" style="margin-bottom:0;">
             <div class="container">
             <h1 class="jumbotron-heading">Galeria de fotos</h1>
          
@@ -72,6 +72,17 @@
             </div>
         </div>
 
+        <div style="height: 100px; background-color: #f8f9fa;">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
+        </div>
         <!-- Modal com formulario para realizar upload de fotos -->
 
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -110,7 +121,8 @@
                     <?php include 'upload.php'?>
                 </div>
             </div>
-        </div>
+        </div>  
+
     </main>
     
     <?php include 'footer.php'?>
