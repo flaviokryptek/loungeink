@@ -54,7 +54,11 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Excluir</button>
+                                
+                                <a href="excluir_foto.php?id=<?php echo $id;?>&foto=<?php echo $foto;?>">
+                                    <button type='button' class='btn btn-sm btn-outline-secondary'>Excluir</button>
+                                </a>
+                            
                                 </div>
                                 <small class="text-muted">Album</small>
                             </div>
@@ -121,7 +125,12 @@
                     <?php include 'upload.php'?>
                 </div>
             </div>
+<<<<<<< HEAD
         </div>  
+=======
+        </div>
+
+>>>>>>> c79452fea59b0e62f88b8ca86edd82e7feeaa0fd
 
     </main>
     
