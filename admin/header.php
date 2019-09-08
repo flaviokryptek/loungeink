@@ -18,7 +18,7 @@
                     <a class="nav-link" href="index.php">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="galeria.php">Galeria</a>
+                    <a class="nav-link" href="galeria.php?pagina=1">Galeria</a>
                 </li>
  
                 <li class="nav-item">

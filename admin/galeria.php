@@ -1,3 +1,28 @@
+<!-- Paginação -->
+
+<?php
+
+    include '../conexao/conecta.php';
+
+    $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1;
+
+    $busca ="SELECT * from galeria";
+    $resultado = mysqli_query($conn,$busca);
+
+    $total_busca = mysqli_num_rows($resultado);
+
+    $quantidade_pg = 6;
+
+    $num_pagina = ceil($total_busca/$quantidade_pg);
+
+    $inicio = ($quantidade_pg*$pagina)-$quantidade_pg;
+
+    $busca ="SELECT * from galeria limit $inicio, $quantidade_pg";
+    $resultado = mysqli_query($conn,$busca);
+
+    $total_busca = mysqli_num_rows($resultado);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,28 +59,17 @@
             <div class="container">
             <div class="row">
                 
-                <?php
-
-                include '../conexao/conecta.php';
-
-                $query ='SELECT * from galeria';
-                $result = mysqli_query($conn,$query);
-
-                    if($result){
-                        while($row = mysqli_fetch_assoc($result)){
-                            $id = $row['id'];
-                            $foto = $row['foto'];
-                ?>
-
+                <?php while($row = mysqli_fetch_assoc($resultado)){ ?>
+                 
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
-                        <?php echo "<img src='../uploads/".$foto."'>"?>
-                        
+                        <img src="../uploads/<?php echo $row['foto'];?>"> 
+                                           
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                 
-                                <a href="excluir_foto.php?id=<?php echo $id;?>&foto=<?php echo $foto;?>">
+                                <a href="excluir_foto.php?id=<?php echo $row['id'];?>&foto=<?php echo $row['foto'];?>">
                                     <button type='button' class='btn btn-sm btn-outline-secondary'>Excluir</button>
                                 </a>
                             
@@ -66,27 +80,65 @@
                     </div>
                 </div>
                
-                <?php
-                        }
-                    }
-                mysqli_close($conn);
-                ?>
-                
+                <?php } ?>
+
             </div>
             </div>
         </div>
-
+        
+        <!--Paginação-->
+        
         <div style="height: 100px; background-color: #f8f9fa;">
+            
+            <?php
+                //Verificar a pagina anterior e posterior
+                $pagina_anterior = $pagina - 1;
+                $pagina_posterior = $pagina + 1;
+            ?>
+            
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
-                    <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                
+                <!-- Pagina Anterior -->
+                <li class='page-item'>
+                    <?php if($pagina_anterior != 0){ ?>
+                    
+                        <a class='page-link' href="galeria.php?pagina=<?php echo $pagina_anterior; ?>">Previous</a>
+                    
+                    <?php }else{ ?>
+
+						<li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                        </li>
+
+					<?php }  ?>
+                </li>
+
+                <!-- Numeração -->
+                <?php 
+					
+					for($i = 1; $i < $num_pagina + 1; $i++){ ?>
+						<li class='page-item'><a class='page-link' href="galeria.php?pagina=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+				<?php } ?>
+  
+                <!-- Proxima Pagina -->
+                <li class='page-item'>
+                    <?php if($pagina_posterior <= $num_pagina){ ?>
+
+                    <a class='page-link' href="galeria.php?pagina=<?php echo $pagina_posterior; ?>">Next</a>
+                    <?php }else{ ?>
+
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
+                        </li>
+
+                    <?php }  ?>
+                </li>
+                
                 </ul>
             </nav>
         </div>
+
         <!-- Modal com formulario para realizar upload de fotos -->
 
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -125,12 +177,7 @@
                     <?php include 'upload.php'?>
                 </div>
             </div>
-<<<<<<< HEAD
         </div>  
-=======
-        </div>
-
->>>>>>> c79452fea59b0e62f88b8ca86edd82e7feeaa0fd
 
     </main>
     
