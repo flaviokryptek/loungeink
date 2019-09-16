@@ -19,11 +19,7 @@
   <body>
 
     <?php
-<<<<<<< HEAD
-        include 'functions/header.php';
-=======
-      include 'header.php';
->>>>>>> c79452fea59b0e62f88b8ca86edd82e7feeaa0fd
+        include 'header.php';
     ?>
 
     <main role="main" class="container" style="margin-top:100px;">

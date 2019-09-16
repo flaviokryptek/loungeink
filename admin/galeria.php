@@ -5,8 +5,10 @@
     include '../conexao/conecta.php';
 
     $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1;
+    $album = (isset($_GET['album']))? $_GET['album'] : 1;
 
-    $busca ="SELECT * from galeria";
+    $busca ="SELECT * from galeria ";
+
     $resultado = mysqli_query($conn,$busca);
 
     $total_busca = mysqli_num_rows($resultado);
@@ -43,15 +45,23 @@
             <div class="container">
             <h1 class="jumbotron-heading">Galeria de fotos</h1>
          
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Album</button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <button type="submit" class="dropdown-item" name="selecao" value="100R$">100R$</button>
-                    <button type="submit" class="dropdown-item" name="selecao" value="150R$">150R$</button>
-                </div>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Enviar fotos</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Enviar fotos</button>
+            
             </div>
-      
+            <div class="container" style="margin-top: 15px;">
+            <?php
+                include '../conexao/conecta.php';
+
+                $query = 'SELECT * FROM album';
+                $result = mysqli_query($conn, $query);
+
+                while($row = mysqli_fetch_assoc($result)){ ?>
+
+                <a href="galeria.php?album=<?php echo $row['nome'];?>">
+                <?php echo $row['nome'];?>
+                </a>
+
+                <?php } mysqli_close($conn);?>
             </div>
         </section>
 
@@ -74,7 +84,7 @@
                                 </a>
                             
                                 </div>
-                                <small class="text-muted">Album</small>
+                                <small class="text-muted"><?php echo $row['album'];?></small>
                             </div>
                         </div>
                     </div>
@@ -150,21 +160,29 @@
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+                    
                     <form name="cadastro" method="post" enctype="multipart/form-data">
                         <div class="modal-body">
                         
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Escolha as fotos e o album para enviar.</label>
-                                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="foto[]" multiple="multiple">
+                                <input type="file" class="form-control-file" required id="exampleFormControlFile1" name="foto[]" multiple="multiple">
                             </div>
+
+                            <?php
+                            include '../conexao/conecta.php';
+
+                            $query = 'SELECT * FROM album';
+                            $result = mysqli_query($conn, $query);
+
+                            while($row = mysqli_fetch_assoc($result)){ ?>
+
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="album" id="inlineRadio1" value="100R$" checked>
-                                <label class="form-check-label" for="inlineRadio1">100R$</label>
+                                <input class="form-check-input" type="radio" name="album" required id="inlineRadio2" value="<?php echo $row['nome']; ?>">
+                                <label class="form-check-label" for="inlineRadio2"><?php echo $row['nome']; ?></label>
                             </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="album" id="inlineRadio2" value="150R$">
-                                <label class="form-check-label" for="inlineRadio2">150R$</label>
-                            </div>
+
+                            <?php } mysqli_close($conn);?>
                         
                         </div>
                         <div class="modal-footer">

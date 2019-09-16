@@ -15,10 +15,15 @@
             <ul class="navbar-nav mr-auto" style="height: 40px;">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">Inicio</a>
+                    <a class="nav-link" href="galeria.php">Galeria</a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="galeria.php?pagina=1">Galeria</a>
+                    <a class="nav-link" href="list_albums.php">Albums</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="cadastro_album.php">Criar Album</a>
                 </li>
  
                 <li class="nav-item">
@@ -26,7 +31,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="cadastro_user.php">Cadastrar</a>
+                    <a class="nav-link" href="cadastro_user.php">Cadastrar Usuario</a>
                 </li>
 
                 <li class="nav-item">
