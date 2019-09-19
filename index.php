@@ -4,23 +4,47 @@
 <head>
 
   <meta charset="utf-8">
-  <title>Tattooaria Lounge Ink</title>
+  <title>Tattooaria Lounge Ink - Inicio</title>
   <link href="img/logo.jpg" rel="icon">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/reset.css" rel="stylesheet">
-  <script src="js/jquery.js"></script>
-  <script src="js/scripts.js"></script>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 
 <body>
 
   <?php include 'header.php'?>
-  
-  <div class="main-foto foto01" data-divisor="2">
-  </div>
 
   <div class="main">
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/foto01.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="img/fachada.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="img/postfoto01.png" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Proxima</span>
+      </a>
+    </div>
+
     <section class="full-section">
       <div class="welcome-div1">
         <div class="box-div1">
@@ -174,76 +198,6 @@
     <section class="full-section">
       <div class="welcome-div1">
         <div class="box-div1">
-          <p class="welcome-title" style="font-size: 30pt;">CUIDADOS PÓS TATUAGEM</p>
-        </div>
-      </div>
-      <div class="welcome-div2">
-        <div class="box-div2">
-          <img src="img/ornamento.png">
-        </div>
-      </div>
-      <div class="welcome-div3">
-        <div class="box-div3">
-          <p class="welcome-text">Cuide de quem você ama</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="post-section">
-      <div class="post-center">
-        <div class="post-left">
-          <div class="post-imagem">
-            <img src="img/fotopost04.png">
-          </div>
-        </div>
-        <div class="post-right">
-          <div class="post-text">
-            <div class="text-label">
-              <p class="post-title">EVITE O SOL</p></br>
-              <p>E isso não só para os primeiros dias pós-tatuagem. O sol é um perigo para as tattoos, principalmente porque ajuda com o desbotamento da tinta, com o passar do tempo.</p>
-            </div>
-          </div>
-        </div>        
-      </div>
-    </section>
-    <section class="post-section">
-      <div class="post-center">
-        <div class="post-left">
-          <div class="post-text">
-            <div class="text-label">
-              <p class="post-title">HIDRATAÇÃO</p></br>
-              <p>Como a pele está machucada, ela precisa de hidratação para ficar bem novamente. Lembre-se de passar um creme hidratante pelo menos uma vez no dia, para ajudar com esse processo.</p>
-            </div>
-          </div>
-        </div>
-        <div class="post-right">
-          <div class="post-imagem">
-            <img src="img/fotopost05.jpg">
-          </div>
-        </div>        
-      </div>
-    </section>
-    <section class="post-section">
-      <div class="post-center">
-        <div class="post-left">
-         <div class="post-imagem">
-            <img src="img/fotopost06.jpg">
-          </div>
-        </div>
-        <div class="post-right">
-          <div class="post-text">
-            <div class="text-label">
-              <p class="post-title">NÃO COCE!</p></br>
-              <p>Quando começar a cicatrizar, acredite que a sua tattoo vai coçar (e muito!). Evite a tentação de colocar a unha com tudo e deixe a tattoo descascar sozinha. Isso evita que o desenho fique deformado e cicatrize exatamente como está.</p>
-            </div>
-          </div>
-        </div>        
-      </div>
-    </section>
-
-    <section class="full-section">
-      <div class="welcome-div1">
-        <div class="box-div1">
           <p class="welcome-title" style="font-size: 30pt;">Faça-nos uma visita</p>
         </div>
       </div>
@@ -266,5 +220,8 @@
     </section>
   </div>
   <?php include 'footer.php'?>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery-slim.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

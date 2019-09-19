@@ -15,7 +15,7 @@
             <ul class="navbar-nav mr-auto" style="height: 40px;">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="galeria.php">Galeria</a>
+                    <a class="nav-link" href="galeria.php?pagina=1">Galeria</a>
                 </li>
 
                 <li class="nav-item">

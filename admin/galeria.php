@@ -5,9 +5,15 @@
     include '../conexao/conecta.php';
 
     $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1;
-    $album = (isset($_GET['album']))? $_GET['album'] : 1;
-
-    $busca ="SELECT * from galeria ";
+    $album = $_GET['album'];
+    
+    if($album){
+        $busca ="SELECT * from galeria where album = '$album'";
+        
+    }else{
+        $busca ="SELECT * from galeria ";
+    }
+    
 
     $resultado = mysqli_query($conn,$busca);
 
@@ -38,6 +44,7 @@
     
 </head>
 <body>
+    
     <?php include 'header.php'?>
     
     <main>
@@ -57,7 +64,7 @@
 
                 while($row = mysqli_fetch_assoc($result)){ ?>
 
-                <a href="galeria.php?album=<?php echo $row['nome'];?>">
+                <a href="galeria.php?pagina=1&album=<?php echo $row['nome'];?>">
                 <?php echo $row['nome'];?>
                 </a>
 
@@ -104,6 +111,7 @@
                 //Verificar a pagina anterior e posterior
                 $pagina_anterior = $pagina - 1;
                 $pagina_posterior = $pagina + 1;
+                
             ?>
             
             <nav aria-label="Page navigation example">
@@ -128,7 +136,7 @@
                 <?php 
 					
 					for($i = 1; $i < $num_pagina + 1; $i++){ ?>
-						<li class='page-item'><a class='page-link' href="galeria.php?pagina=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+						<li class='page-item'><a class='page-link' href="galeria.php?pagina=<?php echo $i;?>"><?php echo $i; ?></a></li>
 				<?php } ?>
   
                 <!-- Proxima Pagina -->
