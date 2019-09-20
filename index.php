@@ -7,7 +7,7 @@
   <title>Tattooaria Lounge Ink - Inicio</title>
   <link href="img/logo.jpg" rel="icon">
   <link href="css/styles.css" rel="stylesheet">
-  <link href="css/reset.css" rel="stylesheet">
+  
   <link href="css/bootstrap.min.css" rel="stylesheet">
 
 </head>

@@ -8,12 +8,10 @@
     $album = $_GET['album'];
     
     if($album){
-        $busca ="SELECT * from galeria where album = '$album'";
-        
+        $busca ="SELECT * from galeria where album='$album'";
     }else{
-        $busca ="SELECT * from galeria ";
+        $busca ="SELECT * from galeria";
     }
-    
 
     $resultado = mysqli_query($conn,$busca);
 
@@ -25,10 +23,16 @@
 
     $inicio = ($quantidade_pg*$pagina)-$quantidade_pg;
 
-    $busca ="SELECT * from galeria limit $inicio, $quantidade_pg";
+    if($album){
+        $busca ="SELECT * FROM galeria WHERE album = '$album' LIMIT $inicio, $quantidade_pg";
+    }else{
+        $busca ="SELECT * FROM galeria LIMIT $inicio, $quantidade_pg";
+    }
+
     $resultado = mysqli_query($conn,$busca);
 
     $total_busca = mysqli_num_rows($resultado);
+    
 ?>
 
 <!DOCTYPE html>
@@ -68,7 +72,7 @@
                 <?php echo $row['nome'];?>
                 </a>
 
-                <?php } mysqli_close($conn);?>
+                <?php } ?>
             </div>
         </section>
 
@@ -121,7 +125,7 @@
                 <li class='page-item'>
                     <?php if($pagina_anterior != 0){ ?>
                     
-                        <a class='page-link' href="galeria.php?pagina=<?php echo $pagina_anterior; ?>">Previous</a>
+                        <a class='page-link' href="galeria.php?pagina=<?php echo $pagina_anterior; ?>&album=<?php echo $album;?>">Previous</a>
                     
                     <?php }else{ ?>
 
@@ -136,14 +140,14 @@
                 <?php 
 					
 					for($i = 1; $i < $num_pagina + 1; $i++){ ?>
-						<li class='page-item'><a class='page-link' href="galeria.php?pagina=<?php echo $i;?>"><?php echo $i; ?></a></li>
+						<li class='page-item'><a class='page-link' href="galeria.php?pagina=<?php echo $i;?>&album=<?php echo $album;?>"><?php echo $i; ?></a></li>
 				<?php } ?>
   
                 <!-- Proxima Pagina -->
                 <li class='page-item'>
                     <?php if($pagina_posterior <= $num_pagina){ ?>
 
-                    <a class='page-link' href="galeria.php?pagina=<?php echo $pagina_posterior; ?>">Next</a>
+                    <a class='page-link' href="galeria.php?pagina=<?php echo $pagina_posterior;?>&album=<?php echo $album;?>">Next</a>
                     <?php }else{ ?>
 
                         <li class="page-item disabled">

@@ -6,7 +6,7 @@
   <title>Tattooaria Lounge Ink - Galeria</title>
   <link rel="icon" href="img/logo.jpg">
   <link href="css/styles.css" rel="stylesheet">
-  <link href="css/reset.css" rel="stylesheet">
+ 
   <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 

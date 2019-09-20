@@ -41,7 +41,7 @@
                         <td><?php echo $nome;?></td>
                        
                         <td>
-                            <a href="edit_album.php?id=<?php echo $id;?>"><button type="button" class ="btn btn-warning btn-sm">Editar</button></a>
+                           
                                                 
                             <a href="remove_album.php?id=<?php echo $id;?>"><button type="button" class="btn btn-danger btn-sm">Excluir</button></a>
                            
