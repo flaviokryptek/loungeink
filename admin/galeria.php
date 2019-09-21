@@ -5,9 +5,10 @@
     include '../conexao/conecta.php';
 
     $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1;
+
     $album = $_GET['album'];
-    
-    if($album){
+
+    if($album != "all"){
         $busca ="SELECT * from galeria where album='$album'";
     }else{
         $busca ="SELECT * from galeria";
@@ -23,7 +24,7 @@
 
     $inicio = ($quantidade_pg*$pagina)-$quantidade_pg;
 
-    if($album){
+    if($album != "all"){
         $busca ="SELECT * FROM galeria WHERE album = '$album' LIMIT $inicio, $quantidade_pg";
     }else{
         $busca ="SELECT * FROM galeria LIMIT $inicio, $quantidade_pg";
@@ -54,25 +55,30 @@
     <main>
         <section class="jumbotron text-center" style="margin-bottom:0;">
             <div class="container">
-            <h1 class="jumbotron-heading">Galeria de fotos</h1>
-         
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Enviar fotos</button>
+                <h1 class="jumbotron-heading">Galeria de fotos</h1>
             
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Enviar fotos</button>
+                
             </div>
-            <div class="container" style="margin-top: 15px;">
-            <?php
-                include '../conexao/conecta.php';
+            <div class="container" style="margin-top: 40px;">
+
+                <a href="galeria.php?pagina=1&album=all" class="btn btn-outline-secondary">
+                    Todas
+                </a>
+
+                <?php include '../conexao/conecta.php';
 
                 $query = 'SELECT * FROM album';
                 $result = mysqli_query($conn, $query);
-
-                while($row = mysqli_fetch_assoc($result)){ ?>
-
-                <a href="galeria.php?pagina=1&album=<?php echo $row['nome'];?>">
-                <?php echo $row['nome'];?>
-                </a>
-
-                <?php } ?>
+               
+                while($row = mysqli_fetch_assoc($result)){?>
+                
+                <a href='galeria.php?pagina=1&album=<?php echo $row['nome']?>' class="btn btn-outline-secondary" >
+                    <?php echo $row['nome']?>
+                </a>     
+               
+                <?php  } ?>
+               
             </div>
         </section>
 
@@ -190,8 +196,8 @@
                             while($row = mysqli_fetch_assoc($result)){ ?>
 
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="album" required id="inlineRadio2" value="<?php echo $row['nome']; ?>">
-                                <label class="form-check-label" for="inlineRadio2"><?php echo $row['nome']; ?></label>
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" required id="inlineRadio<?php echo $row['nome'];?>" value="<?php echo $row['nome']; ?>">
+                                <label class="form-check-label" for="inlineRadio<?php echo $row['nome'];?>"><?php echo $row['nome']; ?></label>
                             </div>
 
                             <?php } mysqli_close($conn);?>
