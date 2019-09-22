@@ -58,12 +58,12 @@
             if($result){
                 echo '
                     <div class="alert alert-success" role="alert">
-                        <strong>Usuário cadastrado com sucesso!</strong>
+                        <strong>Usuário adicionado com sucesso!</strong>
                     </div>';
             }else{
                 echo '
                     <div class="alert alert-danger" role="alert">
-                        <strong>Erro ao cadastrar o usuário, tente novamente!</strong>
+                        <strong>Erro ao adicionar usuário, tente novamente!</strong>
                     </div>';
                 exit();
             }

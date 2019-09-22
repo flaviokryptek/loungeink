@@ -59,12 +59,12 @@
                 if($result){
                     echo '
                         <div class="alert alert-success" role="alert">
-                            <strong>Dados do usuário alterados com sucesso!</strong>
+                            <strong>Album editado com sucesso!</strong>
                         </div>';
                 }else{
                     echo '
                         <div class="alert alert-danger" role="alert">
-                            <strong>Erro ao editar dados do usuário, tente novamente!</strong>
+                            <strong>Erro ao editar album, tente novamente!</strong>
                         </div>';
                     exit();
                 }

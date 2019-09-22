@@ -1,14 +1,13 @@
 
 <?php
 
-    if(isset($_POST['cadastrar'])){
-        
+    if (isset($_POST['cadastrar'])){
+
         include '../conexao/conecta.php';
-      
-        //criando variaveis com os dados recebidos via POST
-       
+        
         $foto = $_FILES['foto'];
-        $album = $_POST['album'];
+        $nome = $_POST['nome'];
+        $descricao = $_POST['descricao'];
         
         for ($k = 0; $k < count($foto['name']); $k++){
 
@@ -40,21 +39,22 @@
                 //gera um nome único para a imagem
                 $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
                 //caminho onde ficara a imagem
-                $caminho_imagem = "../uploads/" . $nome_imagem;
+                $caminho_imagem = "../uploads/slides" . $nome_imagem;
                 //Faz o upload da imagem para seu respectivo caminho
                 move_uploaded_file($foto["tmp_name"][$k], $caminho_imagem);
-                $insere = "INSERT INTO galeria (foto, album) values ('$nome_imagem','$album')";
+                $insere = "INSERT INTO carousel (nome, imagem, descricao) values ('$nome','$nome_imagem','$descricao')";
                 $result = mysqli_query($conn, $insere);
+                
                 if($result){
-                echo '<p>Foto Adcionada com sucesso!</p>';
+                    echo '<p>Slide adcionado com sucesso!</p>';
                 
                 }else{
-                echo '<p>Erro ao adicionar foto! Por favor, tente novamente.</p>';
+                    echo '<p>Erro ao adcionar slide! Por favor, tente novamente.</p>';
                 }
-            }
-            //Se houver mensagens de erro, exibe-as
-            if(count($error)!=0){
-                foreach($error as $erro){
+                }
+                //Se houver mensagens de erro, exibe-as
+                if(count($error)!=0){
+                    foreach($error as $erro){
                     echo '<p>'.$erro . '</p>';
                 }
             }
@@ -62,4 +62,5 @@
     }
         mysqli_close($conn);
     }
+        
 ?>

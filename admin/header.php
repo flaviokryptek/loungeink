@@ -25,6 +25,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="cadastro_album.php">Criar Album</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="list_carousel.php">Slide Show</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="cadastrar_carousel.php">Adicionar Slide Show</a>
+                </li>
  
                 <li class="nav-item">
                     <a class="nav-link" href="list_users.php">Usuários</a>
