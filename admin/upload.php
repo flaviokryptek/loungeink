@@ -40,7 +40,7 @@
                 //gera um nome único para a imagem
                 $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
                 //caminho onde ficara a imagem
-                $caminho_imagem = "../uploads/" . $nome_imagem;
+                $caminho_imagem = '/admin/uploads' . $nome_imagem;
                 //Faz o upload da imagem para seu respectivo caminho
                 move_uploaded_file($foto["tmp_name"][$k], $caminho_imagem);
                 $insere = "INSERT INTO galeria (foto, album) values ('$nome_imagem','$album')";

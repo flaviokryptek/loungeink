@@ -10,5 +10,5 @@
     unlink("../uploads/$foto");
    
     mysqli_close($conn);
-    header('Refresh:0;url=galeria.php');
+    header('Refresh:0;url=galeria.php?pagina=1&album=all');
 ?> 
