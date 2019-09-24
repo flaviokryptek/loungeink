@@ -196,7 +196,7 @@
                             while($row = mysqli_fetch_assoc($result)){ ?>
 
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" required id="inlineRadio<?php echo $row['nome'];?>" value="<?php echo $row['nome']; ?>">
+                                <input class="form-check-input" type="radio" name="album" required id="inlineRadio<?php echo $row['nome'];?>" value="<?php echo $row['nome']; ?>">
                                 <label class="form-check-label" for="inlineRadio<?php echo $row['nome'];?>"><?php echo $row['nome']; ?></label>
                             </div>
 
