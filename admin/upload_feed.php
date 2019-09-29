@@ -1,16 +1,15 @@
 
 <?php
 
-if(isset($_POST['cadastrar'])){
-    
+if (isset($_POST['cadastrar'])){
+
     include '../conexao/conecta.php';
-  
-    //criando variaveis com os dados recebidos via POST
-   
-    $foto = $_FILES['foto'];
-    $album = $_POST['album'];
     
-    for ($k = 0; $k < count($foto["name"]); $k++){
+    $foto = $_FILES['foto'];
+    $nome = $_POST['titulo'];
+    $descricao = $_POST['texto'];
+    
+    for ($k = 0; $k < count($foto['name']); $k++){
 
     if(!empty($foto["name"][$k])){
         $largura = 4920;
@@ -40,25 +39,22 @@ if(isset($_POST['cadastrar'])){
             //gera um nome único para a imagem
             $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
             //caminho onde ficara a imagem
-            $caminho_imagem = "../uploads/". $nome_imagem;
-            
-
+            $caminho_imagem = "../uploads/feed/" . $nome_imagem;
             //Faz o upload da imagem para seu respectivo caminho
-
             move_uploaded_file($foto["tmp_name"][$k], $caminho_imagem);
-
-            $insere = "INSERT INTO galeria (foto, album) values ('$nome_imagem','$album')";
+            $insere = "INSERT INTO feed (titulo, texto, imagem) values ('$nome','$descricao','$nome_imagem')";
             $result = mysqli_query($conn, $insere);
+            
             if($result){
-            echo '<p>Foto Adcionada com sucesso!</p>';
-           
+                echo '<p>Post adcionado com sucesso!</p>';
+            
             }else{
-            echo '<p>Erro ao adicionar foto! Por favor, tente novamente.</p>';
+                echo '<p>Erro ao adcionar post! Por favor, tente novamente.</p>';
             }
-        }
-        //Se houver mensagens de erro, exibe-as
-        if(count($error)!=0){
-            foreach($error as $erro){
+            }
+            //Se houver mensagens de erro, exibe-as
+            if(count($error)!=0){
+                foreach($error as $erro){
                 echo '<p>'.$erro . '</p>';
             }
         }
@@ -66,4 +62,5 @@ if(isset($_POST['cadastrar'])){
 }
     mysqli_close($conn);
 }
+    
 ?>

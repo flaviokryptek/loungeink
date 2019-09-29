@@ -19,14 +19,20 @@
         <form name="cadastrar" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 
-                <label for="nome">Nome</label>
-                <input type="text" class="form-control" name="nome" required id="nome" placeholder="Nome do Slide">
-                
-                <label for="nome">Descrição</label>
-                <input type="text" class="form-control" name="descricao" required id="descricao" placeholder="Descrição do Slide">
-                
-                <label for="exampleFormControlFile1">Escolha a foto.</label>
-                <input type="file" class="form-control-file" required id="exampleFormControlFile1" name="foto[]">
+                <div class="form-group">
+                    <label for="nome">Titulo</label>
+                    <input type="text" class="form-control" name="titulo" required id="nome" placeholder="Titulo do post">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Texto</label>
+                    <textarea class="form-control" name="texto" required id="exampleFormControlTextarea1"  placeholder="Digite aqui o texto do post" rows="6"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">Escolha a foto.</label>
+                    <input type="file" class="form-control-file" required id="exampleFormControlFile1" name="foto[]">
+                </div>
 
             </div>
             <div class="form-group">
@@ -34,7 +40,9 @@
                 <button class="btn btn-primary" type="submit" name="cadastrar" id="cadastrar">Cadastrar</button>
             </div>
         </form>
+
         <?php include 'upload_feed.php'?>
+
     </div>
   </main>
 

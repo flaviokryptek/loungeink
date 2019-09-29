@@ -20,8 +20,8 @@
                 <tr>
                     <th scope="col">Código</th>
                     <th scope="col">Imagem</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Descrição</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Texto</th>
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
@@ -29,21 +29,21 @@
                 <?php
                     include '../conexao/conecta.php';
 
-                    $query = 'SELECT * FROM carousel';
+                    $query = 'SELECT * FROM feed';
                     $result = mysqli_query($conn, $query);
 
                     if($result){
                         while($row = mysqli_fetch_assoc($result)){?> 
                         <tr>
                             <th scope="row"><?php echo $row['id'];?></th>
-                            <td> <img style="height: 100px;" src="../uploads/slides/<?php echo $row['imagem'];?>"> </td>
-                            <td> <?php echo $row['nome'];?> </td>
-                            <td> <?php echo $row['descricao'];?> </td>
+                            <td> <img style="height: 100px;" src="../uploads/feed/<?php echo $row['imagem'];?>"> </td>
+                            <td> <?php echo $row['titulo'];?> </td>
+                            <td> <?php echo $row['texto'];?> </td>
                             <td>
 
-                                <a href="edit_carousel.php?id=<?php echo $row['id'];?>"><button type="button" class ="btn btn-warning btn-sm">Editar</button></a>
+                                <a href="edit_feed.php?id=<?php echo $row['id'];?>"><button type="button" class ="btn btn-warning btn-sm">Editar</button></a>
                                                     
-                                <a href="remove_slide.php?id=<?php echo $row['id'];?>"><button type="button" class="btn btn-danger btn-sm">Excluir</button></a>
+                                <a href="remove_feed.php?id=<?php echo $row['id'];?>"><button type="button" class="btn btn-danger btn-sm">Excluir</button></a>
                             
                             </td>
                         </tr>

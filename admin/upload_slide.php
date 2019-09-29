@@ -39,7 +39,7 @@
                 //gera um nome único para a imagem
                 $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
                 //caminho onde ficara a imagem
-                $caminho_imagem = "../uploads/slides" . $nome_imagem;
+                $caminho_imagem = "../uploads/slides/" . $nome_imagem;
                 //Faz o upload da imagem para seu respectivo caminho
                 move_uploaded_file($foto["tmp_name"][$k], $caminho_imagem);
                 $insere = "INSERT INTO carousel (nome, imagem, descricao) values ('$nome','$nome_imagem','$descricao')";

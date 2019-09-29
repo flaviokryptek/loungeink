@@ -8,7 +8,7 @@
 
     $album = $_GET['album'];
 
-    if($album != "all"){
+    if($album != "Todas"){
         $busca ="SELECT * from galeria where album='$album'";
     }else{
         $busca ="SELECT * from galeria";
@@ -18,16 +18,16 @@
 
     $total_busca = mysqli_num_rows($resultado);
 
-    $quantidade_pg = 6;
+    $quantidade_pg = 18;
 
     $num_pagina = ceil($total_busca/$quantidade_pg);
 
     $inicio = ($quantidade_pg*$pagina)-$quantidade_pg;
 
-    if($album != "all"){
-        $busca ="SELECT * FROM galeria WHERE album = '$album' LIMIT $inicio, $quantidade_pg";
+    if($album != "Todas"){
+        $busca ="SELECT * FROM galeria WHERE album = '$album' LIMIT $inicio, $quantidade_pg ";
     }else{
-        $busca ="SELECT * FROM galeria LIMIT $inicio, $quantidade_pg";
+        $busca ="SELECT * FROM galeria LIMIT $inicio, $quantidade_pg ";
     }
 
     $resultado = mysqli_query($conn,$busca);
@@ -62,22 +62,27 @@
             </div>
             <div class="container" style="margin-top: 40px;">
 
-                <a href="galeria.php?pagina=1&album=all" class="btn btn-outline-secondary">
-                    Todas
-                </a>
+            <?php include '../conexao/conecta.php';
 
-                <?php include '../conexao/conecta.php';
+                $ativo = $_GET["album"];
 
-                $query = 'SELECT * FROM album';
+                $query = 'SELECT * FROM album ORDER BY id ASC';
                 $result = mysqli_query($conn, $query);
-               
-                while($row = mysqli_fetch_assoc($result)){?>
-                
-                <a href='galeria.php?pagina=1&album=<?php echo $row['nome']?>' class="btn btn-outline-secondary" >
-                    <?php echo $row['nome']?>
-                </a>     
-               
-                <?php  } ?>
+
+                while($row = mysqli_fetch_assoc($result)){
+                if($ativo == $row['nome']){?>
+
+                    <a style="margin-right: 10px; color: white !important; background-color: #343a40 !important; border-color: #343a40 !important; " href='galeria.php?pagina=1&album=<?php echo $row['nome']?>' class="btn btn-secondary active" >
+                        <?php echo $row['nome']?>
+                    </a> 
+
+                <?php }else{ ?>   
+
+                    <a style="margin-right: 10px; color: white !important;" href='galeria.php?pagina=1&album=<?php echo $row['nome']?>' class="btn btn-secondary" >
+                        <?php echo $row['nome']?>
+                    </a>
+
+            <?php  }} ?>
                
             </div>
         </section>
@@ -121,7 +126,6 @@
                 //Verificar a pagina anterior e posterior
                 $pagina_anterior = $pagina - 1;
                 $pagina_posterior = $pagina + 1;
-                
             ?>
             
             <nav aria-label="Page navigation example">
@@ -131,12 +135,12 @@
                 <li class='page-item'>
                     <?php if($pagina_anterior != 0){ ?>
                     
-                        <a class='page-link' href="galeria.php?pagina=<?php echo $pagina_anterior; ?>&album=<?php echo $album;?>">Previous</a>
+                        <a class='page-link' href="galeria.php?pagina=<?php echo $pagina_anterior; ?>&album=<?php echo $album;?>">Anterior</a>
                     
                     <?php }else{ ?>
 
 						<li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
                         </li>
 
 					<?php }  ?>
@@ -145,19 +149,23 @@
                 <!-- Numeração -->
                 <?php 
 					
-					for($i = 1; $i < $num_pagina + 1; $i++){ ?>
-						<li class='page-item'><a class='page-link' href="galeria.php?pagina=<?php echo $i;?>&album=<?php echo $album;?>"><?php echo $i; ?></a></li>
-				<?php } ?>
+					for($i = 1; $i < $num_pagina + 1; $i++){ 
+                        if($i == $pagina){?>
+                            
+                            <li class="page-item active" aria-current="page"><a class="page-link" href="galeria.php?pagina=<?php echo $i;?>&album=<?php echo $album;?>"><?php echo $i; ?><span class="sr-only">(current)</span></a></li>
+                        <?php }else{ ?>
+                            <li class='page-item'><a class='page-link' href="galeria.php?pagina=<?php echo $i;?>&album=<?php echo $album;?>"><?php echo $i; ?></a></li>
+                        <?php }} ?>
   
                 <!-- Proxima Pagina -->
                 <li class='page-item'>
                     <?php if($pagina_posterior <= $num_pagina){ ?>
 
-                    <a class='page-link' href="galeria.php?pagina=<?php echo $pagina_posterior;?>&album=<?php echo $album;?>">Next</a>
+                    <a class='page-link' href="galeria.php?pagina=<?php echo $pagina_posterior;?>&album=<?php echo $album;?>">Proxima</a>
                     <?php }else{ ?>
 
                         <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Proxima</a>
                         </li>
 
                     <?php }  ?>

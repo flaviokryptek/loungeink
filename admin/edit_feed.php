@@ -18,25 +18,22 @@
 
         <form name="cadastrar" method="POST" enctype="multipart/form-data">
             <?php
+
                 $id = $_GET["id"]; //pega o código passado via URL
                 include '../conexao/conecta.php';
-                $query = "SELECT * FROM carousel WHERE id = $id LIMIT 1";
+                $query = "SELECT * FROM feed WHERE id = $id LIMIT 1";
                 $result = mysqli_query($conn, $query);
-                if($result){
-                    $row = mysqli_fetch_assoc($result);
-                    $id = $row['id'];
-                    $nome = $row['nome'];
-                    $descricao = $row['descricao'];
-                    $imagem = $row['imagem'];
+                if($result){ $row = mysqli_fetch_assoc($result);
+                $imagem = $row['imagem'];
             ?>
-            <input type="hidden" name="id" value="<?php echo $id; ?>">
+            <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
             <div class="form-group">
-                <label for="nome">Nome</label>
-                <input type="text" class="form-control" name="nome" required id="nome" value="<?php echo $nome;?>">
+                <label for="nome">Titulo</label>
+                <input type="text" class="form-control" name="titulo" required id="nome" value="<?php echo $row['titulo'];?>">
             </div>
             <div class="form-group">
-                <label for="usuario">Descrição</label>
-                <input type="text" class="form-control" name="descricao" required id="descricao" value="<?php echo $descricao;?>">
+                <label for="exampleFormControlTextarea1">Texto</label>
+                <textarea class="form-control" name="texto" required id="exampleFormControlTextarea1" rows="6" ><?php echo $row['texto'];?></textarea>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlFile1">Escolha a foto.</label>
@@ -51,7 +48,7 @@
                 }else{
                     echo '
                         <div class="alert alert-danger" role="alert">
-                            <strong>Slide não encontrado, tente novamente!</strong>
+                            <strong>Post não encontrado, tente novamente!</strong>
                         </div>';
                     exit();
                 }
@@ -66,15 +63,15 @@
         include '../conexao/conecta.php';
 
         $foto = $_FILES['foto'];
-        $nome = $_POST['nome'];
-        $descricao = $_POST['descricao'];
+        $nome = $_POST['titulo'];
+        $descricao = $_POST['texto'];
         $id = $_POST['id'];
 
         for ($k = 0; $k < count($foto['name']); $k++){
 
         if($foto["name"][$k] != false){
 
-            unlink("../uploads/slides/$imagem");
+            unlink("../uploads/feed/$imagem");
 
         if(!empty($foto["name"][$k])){
             $largura = 4920;
@@ -105,11 +102,11 @@
                 //gera um nome único para a imagem
                 $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
                 //caminho onde ficara a imagem
-                $caminho_imagem = "../uploads/slides/" . $nome_imagem;
+                $caminho_imagem = "../uploads/feed/" . $nome_imagem;
                 
                 //Faz o upload da imagem para seu respectivo caminho
                 move_uploaded_file($foto["tmp_name"][$k], $caminho_imagem);
-                $insere = "UPDATE carousel SET nome = '$nome', imagem = '$nome_imagem', descricao = '$descricao' WHERE id = '$id'";
+                $insere = "UPDATE feed SET titulo = '$nome', imagem = '$nome_imagem', texto = '$descricao' WHERE id = '$id'";
                
                 $result = mysqli_query($conn, $insere);
                 
@@ -122,16 +119,16 @@
                 }
             }
             }else{
-                $insere = "UPDATE carousel SET nome='$nome', descricao='$descricao' WHERE id = '$id'";
+                $insere = "UPDATE feed SET titulo='$nome', texto='$descricao' WHERE id = '$id'";
                 $result = mysqli_query($conn, $insere);
 
             }
             if($result){
                 
-                echo '<p>Slide editado com sucesso!</p>';
+                echo '<p>Post editado com sucesso!</p>';
             
             }else{
-                echo '<p>Erro ao editar slide! Por favor, tente novamente.</p>';
+                echo '<p>Erro ao editar post! Por favor, tente novamente.</p>';
             }
         }
         mysqli_close($conn);

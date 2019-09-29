@@ -15,7 +15,15 @@
             <ul class="navbar-nav mr-auto" style="height: 40px;">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="galeria.php?pagina=1&album=all">Galeria</a>
+                    <a class="nav-link" href="list_feed.php">Feed</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="cadastrar_feed.php">Adicionar Feed</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="galeria.php?pagina=1&album=Todas">Galeria</a>
                 </li>
 
                 <li class="nav-item">

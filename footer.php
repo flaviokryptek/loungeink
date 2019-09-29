@@ -1,19 +1,19 @@
-<footer>
-    <div class="footer-center">
-      <div class="footer-superior">
+<footer id ="footer">
+    <div class="footercenter">
+      <div class="footersuperior">
         <div class="post-center" style="width: 90%;">
-          <div id="container-footer">
+          <div id="containerfooter">
             <div id="coluna-01" class="coluna">
               <p class="post-title">Links</p></br>
-              <p><a href="index.html">Inicio</a></p>
-              <p><a href="galeria.html">Galeria</a></p>
+              <p><a href="index.php">Inicio</a></p>
+              <p><a href="galeria.php?pagina=1&album=Todas">Galeria</a></p>
             </div>
             <div id="coluna-02" class="coluna">
               <p class="post-title">Contato</p></br>
               <p>(65) 99639-6723</p>
               <p><a href="https://www.facebook.com/tattooarialoungeink/" target="_blank">Facebook</a></p>
               <p><a href="https://www.instagram.com/tattooarialoungeink/" target="_blank">Instagram</a></p>
-              <p><a href="tattooarialoungeink@gmail.com" target="_blank">Gmail</a></p>
+              
             </div>
             <div id="coluna-03" class="coluna">
               <p class="post-title">Endereço</p></br>
@@ -22,8 +22,8 @@
           </div>
         </div>
       </div>
-      <div class="footer-inferior">
-        <p class="footer-text">Todos os direitos reservados à Tattooaria Lounge Ink.</p>
+      <div class="footerinferior">
+        <p class="footertext">Todos os direitos reservados à Tattooaria Lounge Ink.</p>
       </div>
     </div>
   </footer>

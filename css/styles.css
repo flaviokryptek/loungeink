@@ -2,6 +2,8 @@ header{
     width: 100%;
     background-color: rgb(0, 0, 0);
     height: 80px;
+    position: fixed;
+    z-index: 16;
 }
 nav{
     
@@ -26,6 +28,24 @@ a:hover{
 p{
     margin-bottom: 0 !important;
 }
+
+.whatsapp{
+    position: fixed;
+    z-index: 18;
+    right: 30px;
+    bottom: 30px;
+    
+    
+}
+.whatsapp img{
+    width: 80px;
+    height: 80px;
+}
+.whatsapp img:hover{
+    width: 100px;
+    height: 100px;
+}
+
 .header-title{
     font-family: 'Times New Roman', Times, serif;
     text-decoration: none;
@@ -36,7 +56,7 @@ p{
 .header-link{
    font-family: Century Gothic;
    text-decoration: none;
-   font-size: 18pt;
+   font-size: 20pt;
    text-align: right;
    color: gainsboro; 
    
@@ -58,7 +78,7 @@ p{
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 65%;
+    width: 55%;
     height: 100%;
     
 }
@@ -69,30 +89,28 @@ p{
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 20%;
+    width: 30%;
     height: 100%;
     
 }
 
 
-
-.esquerda-item{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    height: 100%;
-    width: 100%;
-}
-
-.direita-item{
+.direita-link01{
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: right;
-    width: 100%;
+    width: 50%;
     height: 100%;
     
+}
+.direita-link02{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
+    width: 50%;
+    height: 100%;
 }
 .centro-item{
     
@@ -269,7 +287,7 @@ p{
 .post-title{
     font-family: Times, Times New Roman, serif;
     font-size: 20pt;
-    color: gainsboro; 
+    color: rgb(255, 255, 255); 
 }
 .text-label{
     font-family: Century Gothic;
@@ -279,11 +297,11 @@ p{
 
 /* Footer */
 
-.footer-center{
+.footercenter{
     height: 100%;
     width: 100%;
 }
-.footer-superior{
+.footersuperior{
     
     display: flex;
     justify-content: center;
@@ -293,8 +311,8 @@ p{
     text-align: center;
 }
 
-.footer-inferior{
-   
+.footerinferior{
+    background-color: #222222;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -308,13 +326,13 @@ p{
 .footer-links{
     height: 80%;
 }
-.footer-text{
+.footertext{
     font-family: Times, Times New Roman, serif;
     font-size: 15pt;
     color: gainsboro; 
 }
 
-#container-footer{
+#containerfooter{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -335,16 +353,16 @@ p{
 /*galeria.html*/
 
 
-.album{
-    box-sizing: unset !important;
+.albumgaleria{
+   
     padding-right: 5%;
-    padding-left: 5%; 
-    width: 90%;
-    height: 4000px;
+    padding-left: 5%;
+    height: 2200px;
+    width: 100%;
     
 }
 
-.col-album{
+.colalbum{
     
     
     padding-top: 30px;
@@ -354,7 +372,7 @@ p{
     
 }
 
-.col-foto{
+.colfoto{
     background-color: #212121;
     box-shadow: 4px 4px 16px black;
     display: flex;
@@ -366,7 +384,7 @@ p{
     height: 92%;
     margin: 4%;
 }
-.col-foto img{
+.colfoto img{
     
     border-radius: .25rem;
     height: 100%;
@@ -388,14 +406,10 @@ p{
     
 }
 .filtro{
-    background: rgba(110, 110, 110, 0.3);
+    
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 20%;
-    height: 80px;
-    width: 60%;
-    color: white;
 
 }
 .botao{
@@ -419,4 +433,9 @@ p{
     border-radius: 0.5em;
     width: 220px;
     height: 60px;
+}
+
+.paginacao{
+    background-color: #000000;
+    height: 120px;
 }
