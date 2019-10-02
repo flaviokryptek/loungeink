@@ -23,65 +23,66 @@
   </div>
 
   <div class="main">
+  <div class="slideshow">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
 
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
+          <?php include 'conexao/conecta.php';
 
-        <?php include 'conexao/conecta.php';
+          $ativo = 2;
+          $slide = 1;
 
-        $ativo = 2;
-        $slide = 1;
+          $query = "SELECT * FROM carousel ORDER BY id ASC";
+          $result = mysqli_query($conn, $query);
 
-        $query = "SELECT * FROM carousel ORDER BY id ASC";
-        $result = mysqli_query($conn, $query);
-
-        while($row = mysqli_fetch_assoc($result)){
-        if($ativo == 2){?>
-
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-
-        <?php $ativo= 1; }else{?>
-
-          <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $slide; ?>"></li>
-
-        <?php $slide++; }}?>
-        
-      </ol>
-
-      <div class="carousel-inner" role="listbox">
-
-        <?php include 'conexao/conecta.php';
-
-        $ativo = 2;
-
-        $query = "SELECT * FROM carousel ORDER BY id ASC";
-        $result = mysqli_query($conn, $query);
-        
-        while($row = mysqli_fetch_assoc($result)){
+          while($row = mysqli_fetch_assoc($result)){
           if($ativo == 2){?>
 
-            <div class="carousel-item active">
-              <img src="uploads/slides/<?php echo $row['imagem'];?>" class="d-block w-100" alt="<?php echo $row['foto'];?>">
-            </div>
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 
           <?php $ativo= 1; }else{?>
 
-            <div class="carousel-item">
-              <img src="uploads/slides/<?php echo $row['imagem'];?>" class="d-block w-100" alt="<?php echo $row['foto'];?>">
-            </div>
+            <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $slide; ?>"></li>
 
-        <?php }}?>
+          <?php $slide++; }}?>
+          
+        </ol>
 
+        <div class="carousel-inner" role="listbox">
+
+          <?php include 'conexao/conecta.php';
+
+          $ativo = 2;
+
+          $query = "SELECT * FROM carousel ORDER BY id ASC";
+          $result = mysqli_query($conn, $query);
+          
+          while($row = mysqli_fetch_assoc($result)){
+            if($ativo == 2){?>
+
+              <div class="carousel-item active">
+                <img src="uploads/slides/<?php echo $row['imagem'];?>" class="d-block w-100" alt="<?php echo $row['foto'];?>">
+              </div>
+
+            <?php $ativo= 1; }else{?>
+
+              <div class="carousel-item">
+                <img src="uploads/slides/<?php echo $row['imagem'];?>" class="d-block w-100" alt="<?php echo $row['foto'];?>">
+              </div>
+
+          <?php }}?>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Proxima</span>
+        </a>
       </div>
-
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Anterior</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Proxima</span>
-      </a>
     </div>
     
 
@@ -151,12 +152,12 @@
         </div>
       </section>
   
-    <?php } $count_feed ++; } ?>
+    <?php } /*$count_feed ++;*/ } ?>
 
     <section class="full-section">
       <div class="welcome-div1">
         <div class="box-div1">
-          <p class="welcome-title" style="font-size: 30pt;">Faça-nos uma visita</p>
+          <p class="welcome-title" style="font-size: 30pt;">FAÇA-NOS UMA VISITA</p>
         </div>
       </div>
       <div class="welcome-div2">

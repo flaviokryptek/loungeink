@@ -3,6 +3,7 @@ header{
     background-color: rgb(0, 0, 0);
     height: 80px;
     position: fixed;
+    
     z-index: 16;
 }
 nav{
@@ -51,14 +52,16 @@ p{
     text-decoration: none;
     font-size: 28pt;
     color: gainsboro;
+    margin: 0 auto;
 
  }
 .header-link{
    font-family: Century Gothic;
    text-decoration: none;
-   font-size: 20pt;
+   font-size: 28pt;
    text-align: right;
-   color: gainsboro; 
+   color: white; 
+   margin: 0 auto;
    
 }
 
@@ -68,17 +71,17 @@ p{
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 15%;
+    width: 10%;
     height: 100%;
 }
 
 .centro{
     float: left;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     position: relative;
-    width: 55%;
+    width: 50%;
     height: 100%;
     
 }
@@ -89,7 +92,7 @@ p{
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 30%;
+    width: 40%;
     height: 100%;
     
 }
@@ -102,6 +105,7 @@ p{
     text-align: right;
     width: 50%;
     height: 100%;
+   
     
 }
 .direita-link02{
@@ -111,6 +115,7 @@ p{
     text-align: right;
     width: 50%;
     height: 100%;
+  
 }
 .centro-item{
     
@@ -122,6 +127,9 @@ p{
 
 .esquerda-item img{
     height: 60px;
+}
+.slideshow{
+    padding-top: 80px;
 }
 
 .frase{
@@ -135,20 +143,6 @@ p{
     left: 5%;
 }
 
-.main-foto{
-    width: 100%;
-    position: relative;
-    height: 600px;
-    background-attachment: fixed;
-    background-size: 100%;
-    background-position: 50% 0;
-    
-}
-
-
-.foto01{
-    background-image: url(../img/foto01.png);
-}
 
 .main{
     
@@ -260,13 +254,7 @@ p{
     width: 50%;
     height: 100%;
 }
-.post-text{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    height: 90%;
-}
+
 .post-imagem{
     display: flex;
     align-items: center;
@@ -284,6 +272,15 @@ p{
     height: 100%;
     
 }
+
+.post-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 90%;
+}
+
 .post-title{
     font-family: Times, Times New Roman, serif;
     font-size: 20pt;
@@ -438,4 +435,100 @@ p{
 .paginacao{
     background-color: #000000;
     height: 120px;
+}
+
+/* media */
+
+@media (max-width: 1000px){
+
+    /* feed */
+
+    .post-section{
+        width: 80%;
+        height: 1400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    
+    }
+    
+    .post-center{
+        background-color: #121212;
+        width: 100%;
+        height: 90%;
+    
+    }
+    .post-left{
+        
+        justify-content: center;
+        align-items: center;
+       
+        background-color: #121212;
+        text-align: left;
+        width: 100%;
+        height: 60%;
+    }
+    .post-right{
+        
+        justify-content: center;
+        align-items: center;
+       
+        background-color: #121212;
+        text-align: left;
+        width: 100%;
+        height: 40%;
+    }
+
+    .post-title{
+        font-family: Times, Times New Roman, serif;
+        font-size: 30pt;
+        color: rgb(255, 255, 255); 
+    }
+    .text-label{
+        font-family: Century Gothic;
+        color: gainsboro;
+        font-size: 30pt;
+    }
+    .welcome-text{
+        font-family: Snell Roundhand, serif;
+        font-style: italic;
+        font-size: 28pt;
+        text-align: center;
+        color: gainsboro; 
+    }
+
+    /*header*/
+
+    header{
+        width: 100%;
+        background-color: rgb(0, 0, 0);
+        height: 150px;
+        position: fixed;
+        
+        z-index: 16;
+    }
+    .slideshow{
+        padding-top: 150px;
+    }
+
+    /* whatsapp */
+
+    .whatsapp{
+        position: fixed;
+        z-index: 18;
+        right: 50px;
+        bottom: 50px;
+        
+        
+    }
+    
+    .whatsapp img{
+        width: 120px;
+        height: 120px;
+    }
+    .whatsapp img:hover{
+        width: 140px;
+        height: 140px;
+    }
 }
