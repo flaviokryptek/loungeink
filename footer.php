@@ -10,7 +10,7 @@
             </div>
             <div id="coluna-02" class="coluna">
               <p class="post-title">Contato</p></br>
-              <p>(65) 99639-6723</p>
+              <p>Telefone</p>
               <p><a href="https://www.facebook.com/tattooarialoungeink/" target="_blank">Facebook</a></p>
               <p><a href="https://www.instagram.com/tattooarialoungeink/" target="_blank">Instagram</a></p>
               
@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="footerinferior">
-        <p class="footertext">Todos os direitos reservados à Tattooaria Lounge Ink.</p>
+        <p class="footertext">© Todos os direitos reservados à Tattooaria Lounge Ink.</p>
       </div>
     </div>
   </footer>

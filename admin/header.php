@@ -12,49 +12,69 @@
        
         
         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto" style="height: 40px;">
 
-                <li class="nav-item">
-                    <a class="nav-link" href="list_feed.php">Feed</a>
-                </li>
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Feed
+                </button>
+                <div class="dropdown-menu">
 
-                <li class="nav-item">
-                    <a class="nav-link" href="cadastrar_feed.php">Adicionar Feed</a>
-                </li>
+                    <a class="dropdown-item" href="list_feed.php" >Todos</a>
+                    <a class="dropdown-item" href="cadastrar_feed.php" >Adicionar</a>
+                    
+                </div>
+                
+            </div>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="galeria.php?pagina=1&album=Todas">Galeria</a>
-                </li>
+            <div class="btn-group" style="margin-left:10px;">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Galeria
+                </button>
+                <div class="dropdown-menu">
 
-                <li class="nav-item">
-                    <a class="nav-link" href="list_albums.php">Albums</a>
-                </li>
+                    <a class="dropdown-item" href="galeria.php?pagina=1&album=Todas" >Fotos</a>
+                    <a class="dropdown-item" href="list_albums.php" >Albums</a>
+                    <a class="dropdown-item" href="cadastro_album.php" >Adicionar album</a>
+                    
+                </div>
+                
+            </div>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="cadastro_album.php">Criar Album</a>
-                </li>
+            <div class="btn-group" style="margin-left:10px;">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Slide
+                </button>
+                <div class="dropdown-menu">
 
-                <li class="nav-item">
-                    <a class="nav-link" href="list_carousel.php">Slide Show</a>
-                </li>
+                    <a class="dropdown-item" href="list_carousel.php" >Todos</a>
+                    <a class="dropdown-item" href="cadastrar_carousel.php" >Adicionar</a>
+                   
+                    
+                </div>
+                
+            </div>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="cadastrar_carousel.php">Adicionar Slide Show</a>
-                </li>
- 
-                <li class="nav-item">
-                    <a class="nav-link" href="list_users.php">Usuários</a>
-                </li>
+            <div class="btn-group" style="margin-left:10px;">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Usuario
+                </button>
+                <div class="dropdown-menu">
 
-                <li class="nav-item">
-                    <a class="nav-link" href="cadastro_user.php">Cadastrar Usuario</a>
-                </li>
+                    <a class="dropdown-item" href="list_users.php" >Todos</a>
+                    <a class="dropdown-item" href="cadastro_user.php" >Adicionar</a>
+                   
+                    
+                </div>
+                
+            </div>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="log/logout.php">Sair</a>
-                </li>
+            <ul class="navbar-nav mr-auto" style="height: 40px; padding-inline-start: 400px; !important">
+                
                 <li class="nav-item">
                     <p class="nav-link" style="color: #ffff;">Usuário: <?php echo $nome;?> </p>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="log/logout.php">Sair</a>
                 </li>
             </ul>
         </div>
