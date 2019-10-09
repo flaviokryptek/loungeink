@@ -141,13 +141,13 @@
           while($row = mysqli_fetch_assoc($result)){
           if($ativo == $row['nome']){?>
           
-            <a style="margin-right: 10px; color: white !important; background-color: #343a40 !important; border-color: #343a40 !important; " href='galeria.php?pagina=1&album=<?php echo $row['nome']?>' class="btn btn-secondary active" >
+            <a style="color: white !important; background-color: #343a40 !important; border-color: #343a40 !important; " href='galeria.php?pagina=1&album=<?php echo $row['nome']?>' class="btn btn-secondary active" >
                 <?php echo $row['nome']?>
             </a> 
 
           <?php }else{ ?>   
 
-            <a style="margin-right: 10px; color: white !important;" href='galeria.php?pagina=1&album=<?php echo $row['nome']?>' class="btn btn-secondary" >
+            <a style="color: white !important;" href='galeria.php?pagina=1&album=<?php echo $row['nome']?>' class="btn btn-secondary" >
                 <?php echo $row['nome']?>
             </a>
 
@@ -201,7 +201,7 @@
           for($i = 1; $i < $num_pagina + 1; $i++){ 
             if($i == $pagina){?>
                 
-                <li class="page-item active" aria-current="page"><a style="background-color: white; border-color: white; color:white;" class="page-link" href="galeria.php?pagina=<?php echo $i;?>&album=<?php echo $album;?>"><?php echo $i; ?><span class="sr-only">(current)</span></a></li>
+                <li class="page-item active" aria-current="page"><a style="background-color: white; border-color: white; color:black !important;" class="page-link" href="galeria.php?pagina=<?php echo $i;?>&album=<?php echo $album;?>"><?php echo $i; ?><span class="sr-only">(current)</span></a></li>
             
             <?php }else{ ?>
                 

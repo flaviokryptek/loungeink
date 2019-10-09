@@ -15,7 +15,7 @@
 
             <div class="btn-group">
                 <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Feed
+                    Conteudo
                 </button>
                 <div class="dropdown-menu">
 

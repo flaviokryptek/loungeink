@@ -389,7 +389,7 @@ p{
 
 .divisao{
     background-color: #121212;
-    height: 400px;
+    height: auto;
     width: 100%;
 }
 .pri-divisao{
@@ -398,13 +398,18 @@ p{
     width: 100%;
 }
 .seg-divisao{
-    height: 100px;
+    height: auto;
     width: 100%;
     
 }
+
 .filtro{
-    
-    display: flex;
+        
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-gap: 10px;
+    padding: 20px;
+
     justify-content: center;
     align-items: center;
 
@@ -614,7 +619,7 @@ p{
 
     .divisao{
         background-color: #121212;
-        height: 400px;
+        height: auto;
         width: 100%;
     }
     .pri-divisao{
@@ -623,13 +628,17 @@ p{
         width: 100%;
     }
     .seg-divisao{
-        height: 100px;
+        height: auto;
         width: 100%;
         
     }
     .filtro{
         
-        display: flex;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto;
+        grid-gap: 10px;
+        padding: 20px;
+
         justify-content: center;
         align-items: center;
 
@@ -640,8 +649,9 @@ p{
         height: 120px;
     }
     .btn{
-        padding:20px 30px!important;
-        font-size: 20pt !important;
+        padding:5px 10px!important;
+        font-size: 25pt !important;
+        
     }
     .page-item{
         font-size: 2rem !important;

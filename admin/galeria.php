@@ -95,7 +95,7 @@
                  
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
-                        <img src="../uploads/<?php echo $row['foto'];?>"> 
+                        <img style="height: 200px;" src="../uploads/<?php echo $row['foto'];?>"> 
                                            
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
