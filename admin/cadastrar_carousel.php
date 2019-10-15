@@ -34,7 +34,7 @@
                 <button class="btn btn-primary" type="submit" name="cadastrar" id="cadastrar">Cadastrar</button>
             </div>
         </form>
-        <?php include 'upload_feed.php'?>
+        <?php include 'upload_slide.php'?>
     </div>
   </main>
 

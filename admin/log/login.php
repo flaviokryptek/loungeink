@@ -39,7 +39,7 @@
                         <h3 class="panel-title" align="center">Informe seu usuário e senha</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" action="#" name="login" id="login" method="POST" enctype="multipart/form-data" id="login">
+                        <form role="form" name="login" id="login" method="POST" enctype="multipart/form-data" id="login">
                             <fieldset>
                                 <div class="form-group">
                                     <input class="form-control" required placeholder="Usuário" name="usuario" type="text" autofocus>
@@ -93,7 +93,7 @@
         
         //se o usuario existe e a senha for invalida, informa erro
         if ((mysqli_num_rows($result) == 1) AND ($compara_senhas == FALSE)) {
-          echo 
+        
           '<div class="row">
               <div class="col-md-12">
                 <div class="alert alert-danger" align="center"><strong>Erro!</strong> Usuário e/ou senha inválidos. Por favor, tente novamente!</div>

@@ -4,11 +4,11 @@
     $id = $_GET["id"]; //pega o código passado via URL
     $foto = $_GET["foto"];
 
-    $query = "DELETE FROM carousel WHERE id = $id";
+    $query = "DELETE FROM feed WHERE id = $id";
     $result = mysqli_query($conn, $query);
 
-    unlink("../uploads/slides/$foto");
+    unlink("../uploads/feed/$foto");
 
     mysqli_close($conn);
-    header('Refresh:0;url=list_carousel.php');
+    header('Refresh:0;url=list_feed.php');
 ?>
