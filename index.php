@@ -108,64 +108,61 @@
         if($count_feed % 2){?>
       
       <section class="post-section">
-        <div class="post-center">
-          <div class="post-left">
-            <div class="post-imagem">
-              <img src="uploads/feed/<?php echo $row['imagem'];?>">
-            </div>
-          </div>
-
-          <div class="post-right">
-            <div class="post-text">
-              <div class="text-label">
-                <h3 class="post-title"><?php echo $row['titulo'];?></h3>
-                <p><?php echo $row['texto'];?></p>
-              </div>
-            </div>
-          </div>
+        
+        <div class="post-imagem">
+          <img src="uploads/feed/<?php echo $row['imagem'];?>">
         </div>
+      
+        <div class="post-text">
+          <ul>
+            <li> <h3><?php echo $row['titulo'];?></h3> </li>
+            <li> <p><?php echo $row['texto'];?></p> </li>
+          </ul>
+        </div>
+            
       </section>
 
       <?php }else{ ?>
 
       <section class="post-section">
-        <div class="post-center">
-          <div class="post-left">
-            <div class="post-text">
-              <div class="text-label">
-                <h3 class="post-title"><?php echo $row['titulo'];?></h3>
-                <p><?php echo $row['texto'];?></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="post-right">
-            <div class="post-imagem">
-              <img src="uploads/feed/<?php echo $row['imagem'];?>">
-            </div>
-          </div>
+        
+        <div class="post-text">
+          <ul>
+            <li> <h3><?php echo $row['titulo'];?></h3> </li>
+            <li> <p><?php echo $row['texto'];?></p> </li>
+          </ul>
         </div>
+      
+        <div class="post-imagem">
+          <img src="uploads/feed/<?php echo $row['imagem'];?>">
+        </div>
+          
       </section>
   
-    <?php } /*$count_feed ++;*/ } ?>
+    <?php } $count_feed ++; } ?>
 
     <section class="full-section">
-      <div class="box-div1">
-        <p class="welcome-title" style="font-size: 30pt;">FAÇA-NOS UMA VISITA</p>
+
+      <div class="welcome-title">
+        <p>FAÇA-NOS UMA VISITA</p>
       </div>
-      <div class="box-div2">
+
+      <div>
         <img src="img/ornamento.png">
       </div>
-      <div class="box-div3">
-        <p class="welcome-text">Como chegar</p>
+
+      <div class="welcome-text">
+        <p>Como chegar</p>
       </div>
+
     </section>
 
     <section class="post-section">
-      <div class="post-center" style="width: 100%;">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.8321998694328!2d-57.496667557543184!3d-14.627155741891048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2ecdc0f90b16f446!2sTattooaria+Lounge+Ink!5e0!3m2!1spt-BR!2sbr!4v1548725950107" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <div class="gmaps">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.8321998694328!2d-57.496667557543184!3d-14.627155741891048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2ecdc0f90b16f446!2sTattooaria+Lounge+Ink!5e0!3m2!1spt-BR!2sbr!4v1548725950107" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
     </section>
+
   </div>
   <?php include 'footer.php'?>
   <script src="js/bootstrap.min.js"></script>
