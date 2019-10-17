@@ -1,11 +1,4 @@
 
-footer{
-    
-    background-color: #121212;
-    height: 300px;
-    width: 100%;
-    
-}
 
 /* api whatsapp */
 .whatsapp{
@@ -27,6 +20,7 @@ footer{
 
 /* header */
 .header{
+    display: flex;
     justify-content: space-between;
     background-color: rgb(0, 0, 0);
     padding: 10px;
@@ -49,20 +43,27 @@ footer{
     font-size: 20pt;
     padding: 10px;
     margin-left: 10px;
+    color: gainsboro;
+}
+.header-logo:hover a{
+    color: dimgray;
 }
 
 .header-link{
-    font-family: Century Gothic;
-    font-size: 20pt;
     display: flex;
-
 }
 .header-link li{
     margin-left: 20px;
 }
 .header-link li a{
+    color: gainsboro;
+    font-family: Century Gothic;
+    font-size: 20pt;
     display: block;
     padding: 10px;
+}
+.header-link li:hover a{
+    color: dimgray;
 }
 
 /* slide */
@@ -71,77 +72,18 @@ footer{
 }
 
 /* feed */
-.frase{
-    color: gainsboro;
-    font-size: 30px;
-    position: absolute;
-    background-color: rgba(0,0,0,0.8);
-    padding: 20px;
-    width: 400px;
-    bottom: 100px;
-    left: 5%;
-}
 
+/*welcome section */
 
-.main{
-    
-    background-color: #000000;
-    width: 100%;
-
-}
 .full-section{
     background-color: #121212;
     width: 100%;
-    height: 300px;
+    justify-content: center;
+    display: grid;
+    padding: 5px;
+    
 }
 
-.welcome-div1{
-    /*position: relative;*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 40%;
-}
-.welcome-div2{
-    /*position: relative;*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 42%;
-    width: 100%;
-}
-.welcome-div3{
-    /*position: relative;*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 18%;
-}
-.box-div1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    height: 100%;
-    width: 80%;
-}
-.box-div2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-}
-.box-div3{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 60%;
-}
 .welcome-title{
     font-family: Times, Times New Roman, serif;
     font-size: 30pt;
@@ -156,6 +98,19 @@ footer{
     text-align: center;
     color: gainsboro; 
 }
+
+.frase{
+    color: gainsboro;
+    font-size: 30px;
+    position: absolute;
+    background-color: rgba(0,0,0,0.8);
+    padding: 20px;
+    width: 400px;
+    bottom: 100px;
+    left: 5%;
+}
+
+/* post section */
 
 .post-section{
     width: 80%;
@@ -233,367 +188,134 @@ footer{
 
 /* Footer */
 
-.footercenter{
-    height: 100%;
-    width: 100%;
-}
-.footersuperior{
-    
+.footer{
+    background-color: #111111;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 85%;
-    text-align: center;
-}
-
-.footerinferior{
-    background-color: #222222;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    
-    width: 100%;
-    height: 15%;
-    text-align: center;
-}
-
-.footer-links{
-    height: 80%;
-}
-.footertext{
-    font-family: Times, Times New Roman, serif;
-    font-size: 15pt;
-    color: gainsboro; 
-}
-
-#containerfooter{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-.coluna{
-   
-    width: 33%;
-    height: 100%;
-    font-family: Century Gothic;
-    color: gainsboro;
-    font-size: 15pt;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 15px;
     text-align: left;
 }
+.footer a {
+    font-family: 'Times New Roman', Times, serif;
+    color: gainsboro;
+    font-size: 15pt;
+    padding: 10px;
+}
+.footer a:hover{
+    color: rgb(255, 255, 255);
+}
+.footer p{
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(156, 156, 156);
+    font-size: 15pt;
+    padding: 10px;
+}
 
+.footer-inferior{
+    background-color: #222222;
+   
+}
+.footer-inferior p{
+    padding: 5px;
+    text-align: center;
+    font-size: 10pt;
+    color: gainsboro;
+}
 
 /*galeria.html*/
 
-
-.albumgaleria{
-   
-    padding-right: 5%;
-    padding-left: 5%;
-    height: 2200px;
-    width: 100%;
-    
-}
-
-.colalbum{
-    
-    
-    padding-top: 30px;
-    float: left;
-    width: 33.3333%;
-    height: 350px;
-    
-}
-
-.colfoto{
-    background-color: #212121;
-    box-shadow: 4px 4px 16px black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    border-radius: .25rem;
-    width: 92%;
-    height: 92%;
-    margin: 4%;
-}
-.colfoto img{
-    
-    border-radius: .25rem;
-    height: 100%;
-}
-
-.divisao{
-    background-color: #121212;
-    height: auto;
-    width: 100%;
-}
-.pri-divisao{
-   
-    height: 300px;
-    width: 100%;
-}
-.seg-divisao{
-    height: auto;
-    width: 100%;
-    
-}
-
 .filtro{
         
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
-    grid-gap: 10px;
+    display: flex;
     padding: 20px;
-
     justify-content: center;
+
+}
+.botao{
+    margin-left: 20px;
     align-items: center;
-
+    padding: 8px;
+    background-color: gainsboro;
+    color: black;
+    font-size: 15pt;
+    border-radius: 5px;
+    box-shadow: 4px 4px 16px black;
+}
+.botao-active, .botao:hover {
+    margin-left: 20px;
+    align-items: center;
+    background-color: #969696;
+    color: black;
+    font-size: 15pt;
+    border-radius: 5px;
+    padding: 8px;
+    box-shadow: 4px 4px 16px black;
 }
 
-.paginacao{
-    background-color: #000000;
-    height: 120px;
+.albumgaleria{
+    background-color: #121212;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+    justify-content: center;
+    
 }
+
+.foto{
+    display: flex;
+    justify-content: center;
+    background-color: #212121;
+    box-shadow: 4px 4px 16px black;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+    margin: 30px;
+}
+.foto img{
+    height: 100%;
+
+}
+/* paginação */
+
+.pagination{
+    background-color: #121212;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.pagination ul{
+    display: flex;
+    box-shadow: 4px 4px 16px black;
+    background-color: gainsboro;
+    
+}
+.pagination li{
+    display: flex;
+    align-items: center;
+}
+.pagination li:hover{
+    background-color: #969696;
+}
+.pagination a{
+    padding: 10px;
+    color: black;
+    font-size: 15pt;
+}
+
+.desativado a{
+    color: rgb(165, 165, 165);
+    background-color: gainsboro;
+}
+
 
 /* media */
 
-@media (max-width: 1000px){
-
-    /* feed */
-
-    .post-section{
-        width: 80%;
-        height: 1400px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: auto;
-    
-    }
-    
-    .post-center{
-        background-color: #121212;
-        width: 100%;
-        height: 90%;
-    
-    }
-    .post-left{
-        
-        justify-content: center;
-        align-items: center;
-       
-        background-color: #121212;
-        text-align: left;
-        width: 100%;
-        height: 60%;
-    }
-    .post-right{
-        
-        justify-content: center;
-        align-items: center;
-       
-        background-color: #121212;
-        text-align: left;
-        width: 100%;
-        height: 40%;
-    }
-
-    .post-title{
-        font-family: Times, Times New Roman, serif;
-        font-size: 30pt;
-        color: rgb(255, 255, 255); 
-    }
-    .text-label{
-        font-family: Century Gothic;
-        color: gainsboro;
-        font-size: 30pt;
-    }
-    .welcome-text{
-        font-family: Snell Roundhand, serif;
-        font-style: italic;
-        font-size: 28pt;
-        text-align: center;
-        color: gainsboro; 
-    }
-
-    /*header*/
-
-    header{
-        width: 100%;
-        background-color: rgb(0, 0, 0);
-        height: 150px;
-        position: fixed;
-        
-        z-index: 16;
-    }
-    .slideshow{
-        padding-top: 150px;
-    }
-
-    /* whatsapp */
-
-    .whatsapp{
-        position: fixed;
-        z-index: 18;
-        right: 50px;
-        bottom: 50px;
-        
-        
-    }
-    
-    .whatsapp img{
-        width: 120px;
-        height: 120px;
-    }
-    .whatsapp img:hover{
-        width: 140px;
-        height: 140px;
-    }
-
-    /* footer */
-
-    footer{
-    
-        background-color: #121212;
-        height: 600px;
-        width: 100%;
-        
-    }
-
-    .footercenter{
-        height: 100%;
-        width: 100%;
-    }
-    .footersuperior{
-        
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 85%;
-        text-align: center;
-    }
-    
-    .footerinferior{
-        background-color: #222222;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-        
-        width: 100%;
-        height: 15%;
-        text-align: center;
-    }
-    
-    .footer-links{
-        height: 80%;
-    }
-    .footertext{
-        font-family: Times, Times New Roman, serif;
-        font-size: 24pt;
-        color: gainsboro; 
-    }
-    
-    #containerfooter{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-    }
-    .coluna{
-       
-        width: 33%;
-        height: 100%;
-        font-family: Century Gothic;
-        color: gainsboro;
-        font-size: 30pt;
-        text-align: left;
-    }
-
-    /*galeria.html*/
-
-
-    .albumgaleria{
-    
-        padding-right: 5%;
-        padding-left: 5%;
-        height: 2200px;
-        width: 100%;
-        
-    }
-
-    .colalbum{
-        
-        
-        padding-top: 30px;
-        float: left;
-        width: 33.3333%;
-        height: 350px;
-        
-    }
-
-    .colfoto{
-        background-color: #212121;
-        box-shadow: 4px 4px 16px black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        border-radius: .25rem;
-        width: 92%;
-        height: 92%;
-        margin: 4%;
-    }
-    .colfoto img{
-        
-        border-radius: .25rem;
-        height: 100%;
-    }
-
-    .divisao{
-        background-color: #121212;
-        height: auto;
-        width: 100%;
-    }
-    .pri-divisao{
-    
-        height: 300px;
-        width: 100%;
-    }
-    .seg-divisao{
-        height: auto;
-        width: 100%;
-        
-    }
-    .filtro{
-        
-        display: grid;
-        grid-template-columns: auto auto auto auto auto auto;
-        grid-gap: 10px;
-        padding: 20px;
-
-        justify-content: center;
-        align-items: center;
-
-    }
-
-    .paginacao{
-        background-color: #000000;
-        height: 120px;
-    }
-    .btn{
-        padding:5px 10px!important;
-        font-size: 25pt !important;
-        
-    }
-    .page-item{
-        font-size: 2rem !important;
-    }
-
-}

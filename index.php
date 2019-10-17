@@ -87,22 +87,17 @@
     
 
     <section class="full-section">
-      <div class="welcome-div1">
-        <div class="box-div1">
-          <p class="welcome-title">BEM-VINDO Á TATTOOARIA LOUNGE INK</p>
-        </div>
+      <div class="welcome-title">
+        <p>BEM-VINDO Á TATTOOARIA LOUNGE INK</p>
       </div>
-      <div class="welcome-div2">
-        <div class="box-div2">
-          <img src="img/ornamento.png">
-        </div>
+      <div>
+        <img src="img/ornamento.png">
       </div>
-      <div class="welcome-div3">
-        <div class="box-div3">
-          <p class="welcome-text">Limpo. Ousado. Profissional. Criativo.</p>
-        </div>
+      <div class="welcome-text">
+        <p>Limpo. Ousado. Profissional. Criativo.</p>
       </div>
     </section>
+
     <?php include 'conexao/conecta.php';
      
       $feed_query = "SELECT * FROM feed ORDER BY id ASC";
@@ -155,20 +150,14 @@
     <?php } /*$count_feed ++;*/ } ?>
 
     <section class="full-section">
-      <div class="welcome-div1">
-        <div class="box-div1">
-          <p class="welcome-title" style="font-size: 30pt;">FAÇA-NOS UMA VISITA</p>
-        </div>
+      <div class="box-div1">
+        <p class="welcome-title" style="font-size: 30pt;">FAÇA-NOS UMA VISITA</p>
       </div>
-      <div class="welcome-div2">
-        <div class="box-div2">
-          <img src="img/ornamento.png">
-        </div>
+      <div class="box-div2">
+        <img src="img/ornamento.png">
       </div>
-      <div class="welcome-div3">
-        <div class="box-div3">
-          <p class="welcome-text">Como chegar</p>
-        </div>
+      <div class="box-div3">
+        <p class="welcome-text">Como chegar</p>
       </div>
     </section>
 

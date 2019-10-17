@@ -52,7 +52,9 @@
   
   <?php include 'header.php'?>
 
-  <div class="main">
+  <div class="whatsapp">
+    <a href="https://api.whatsapp.com/send?phone=5565999781134&text=Olá"><img src="img/rede-social/whatsapp.png"></a>
+  </div>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -112,66 +114,62 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
+
     </div>
 
-    <div class="divisao">
-      <div class="pri-divisao">
-        <div class="welcome-div1">
-          <div class="box-div1">
-            <p class="welcome-title" style="font-size: 60px">GALERIA DE FOTOS</p>
-          </div>
-        </div>
-        <div class="welcome-div2">
-          <div class="box-div2">
-            <img src="img/ornamento.png">
-          </div>
-        </div>
+    <div class="full-section">
+
+      <div class="welcome-title">
+        <p style="font-size: 60px">GALERIA DE FOTOS</p>
       </div>
 
-      <div class="seg-divisao">
-        <div class="filtro">
-
-        <?php include 'conexao/conecta.php';
-
-          $ativo = $_GET["album"];
-
-          $query = 'SELECT * FROM album ORDER BY id ASC';
-          $result = mysqli_query($conn, $query);
-
-          while($row = mysqli_fetch_assoc($result)){
-          if($ativo == $row['nome']){?>
-          
-            <a style="color: white !important; background-color: #343a40 !important; border-color: #343a40 !important; " href='galeria.php?pagina=1&album=<?php echo $row['nome']?>' class="btn btn-secondary active" >
-                <?php echo $row['nome']?>
-            </a> 
-
-          <?php }else{ ?>   
-
-            <a style="color: white !important;" href='galeria.php?pagina=1&album=<?php echo $row['nome']?>' class="btn btn-secondary" >
-                <?php echo $row['nome']?>
-            </a>
-
-        <?php  }} ?>
-
-        </div>
+      <div>
+        <img src="img/ornamento.png">
       </div>
+       
+      <div class="filtro">
+
+      <?php include 'conexao/conecta.php';
+
+        $ativo = $_GET["album"];
+
+        $query = 'SELECT * FROM album ORDER BY id ASC';
+        $result = mysqli_query($conn, $query);
+
+        while($row = mysqli_fetch_assoc($result)){
+        if($ativo == $row['nome']){?>
+  
+          <a class="botao-active" href="galeria.php?pagina=1&album=<?php echo $row['nome']?>">
+              <?php echo $row['nome']?>
+          </a> 
+
+        <?php }else{ ?>   
+
+          <a class="botao" href="galeria.php?pagina=1&album=<?php echo $row['nome']?>">
+              <?php echo $row['nome']?>
+          </a>
+
+      <?php  }} ?>
+
+      </div>
+
     </div>
 
     <div class="albumgaleria">
       <?php while($row = mysqli_fetch_assoc($resultado)){ ?>
 
-        <div class="colalbum" >
-          <div class="colfoto">
+        
+          <div class="foto">
             <img src='uploads/<?php echo $row['foto'];?>'>
           </div>
-        </div>
+        
 
         <?php } ?>
       
-    </div>
+      </div>
 
     <!--Paginação--> 
-    <div class="paginacao">
+    <div class="pagination">
             
       <?php
           //Verificar a pagina anterior e posterior
@@ -179,51 +177,59 @@
           $pagina_posterior = $pagina + 1;
       ?>
       
-      <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
+        <ul >
           <!-- Pagina Anterior -->
-          <li class='page-item'>
+          
               <?php if($pagina_anterior != 0){ ?>
-              
-                  <a style="background-color: black;" class='page-link' href="galeria.php?pagina=<?php echo $pagina_anterior; ?>&album=<?php echo $album;?>">Anterior</a>
-              
+
+                <li class="anterior">
+                  <a href="galeria.php?pagina=<?php echo $pagina_anterior; ?>&album=<?php echo $album;?>">Anterior</a>
+                </li>
+
               <?php }else{ ?>
 
-                  <li class="page-item disabled">
-                      <a style="background-color: black;" class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
-                  </li>
+                <li class="desativado">
+                    <a>Anterior</a>
+                </li>
 
               <?php }  ?>
-          </li>
+          
           <!-- Numeração -->
+
           <?php 
     
           for($i = 1; $i < $num_pagina + 1; $i++){ 
             if($i == $pagina){?>
                 
-                <li class="page-item active" aria-current="page"><a style="background-color: white; border-color: white; color:black !important;" class="page-link" href="galeria.php?pagina=<?php echo $i;?>&album=<?php echo $album;?>"><?php echo $i; ?><span class="sr-only">(current)</span></a></li>
+                <li class="desativado" >
+                  <a><?php echo $i; ?></a>
+                </li>
             
             <?php }else{ ?>
                 
-                <li class='page-item'><a style="background-color: black;" class='page-link' href="galeria.php?pagina=<?php echo $i;?>&album=<?php echo $album;?>"><?php echo $i; ?></a></li>
+                <li class='numero'>
+                  <a href="galeria.php?pagina=<?php echo $i;?>&album=<?php echo $album;?>"><?php echo $i; ?></a>
+                </li>
             
             <?php }} ?>
+
           <!-- Proxima Pagina -->
-          <li class='page-item'>
+          
             <?php if($pagina_posterior <= $num_pagina){ ?>
 
-            <a style="background-color: black;" class='page-link' href="galeria.php?pagina=<?php echo $pagina_posterior;?>&album=<?php echo $album;?>">Proxima</a>
-            
+              <li class='proxima'>
+                <a href="galeria.php?pagina=<?php echo $pagina_posterior;?>&album=<?php echo $album;?>">Proxima</a>
+              </li>
+
             <?php }else{ ?>
 
-                <li class="page-item disabled">
-                    <a  style="background-color: black;" class="page-link" href="#" tabindex="-1" aria-disabled="true">Proxima</a>
-                </li>
+              <li class="desativado">
+                  <a>Proxima</a>
+              </li>
 
             <?php }  ?>
-          </li>
+          
         </ul>
-      </nav>
     </div>
 
   </div>
