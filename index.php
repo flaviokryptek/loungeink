@@ -139,7 +139,7 @@
           
       </section>
   
-    <?php } $count_feed ++; } ?>
+    <?php }/* $count_feed ++; */} ?>
 
     <section class="full-section">
 
