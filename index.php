@@ -23,7 +23,6 @@
   </div>
 
   <div class="main">
-  <div class="slideshow">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
 
@@ -83,20 +82,17 @@
           <span class="sr-only">Proxima</span>
         </a>
       </div>
-    </div>
     
 
-    <section class="full-section">
-      <div class="welcome-title">
-        <p>BEM-VINDO Á TATTOOARIA LOUNGE INK</p>
-      </div>
-      <div>
-        <img src="img/ornamento.png">
-      </div>
-      <div class="welcome-text">
-        <p>Limpo. Ousado. Profissional. Criativo.</p>
-      </div>
-    </section>
+    <div class="full-section">
+     
+      <h3>BEM-VINDO Á TATTOOARIA LOUNGE INK</h3>
+  
+      <img src="img/ornamento.png">
+    
+      <p>Limpo. Ousado. Profissional. Criativo.</p>
+      
+    </div>
 
     <?php include 'conexao/conecta.php';
      
@@ -143,18 +139,12 @@
 
     <section class="full-section">
 
-      <div class="welcome-title">
-        <p>FAÇA-NOS UMA VISITA</p>
-      </div>
-
-      <div>
-        <img src="img/ornamento.png">
-      </div>
-
-      <div class="welcome-text">
-        <p>Como chegar</p>
-      </div>
-
+      <h3>FAÇA-NOS UMA VISITA</h3>
+    
+      <img src="img/ornamento.png">
+    
+      <p>Como chegar</p>
+   
     </section>
 
     <section class="post-section">

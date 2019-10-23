@@ -18,7 +18,7 @@
 
     $total_busca = mysqli_num_rows($resultado);
 
-    $quantidade_pg = 18;
+    $quantidade_pg = 20;
 
     $num_pagina = ceil($total_busca/$quantidade_pg);
 
@@ -117,15 +117,11 @@
 
     </div>
 
-    <div class="full-section">
+    <section class="full-section">
 
-      <div class="welcome-title">
-        <p style="font-size: 60px">GALERIA DE FOTOS</p>
-      </div>
+      <h3>GALERIA DE FOTOS</h3>
 
-      <div>
-        <img src="img/ornamento.png">
-      </div>
+      <img src="img/ornamento.png">
        
       <div class="filtro">
 
@@ -153,14 +149,14 @@
 
       </div>
 
-    </div>
+    </section>
 
     <div class="albumgaleria">
       <?php while($row = mysqli_fetch_assoc($resultado)){ ?>
 
         
           <div class="foto">
-            <img src='uploads/<?php echo $row['foto'];?>'>
+           <img src='uploads/<?php echo $row['foto'];?>'>
           </div>
         
 
@@ -231,7 +227,6 @@
           
         </ul>
     </div>
-
   </div>
   
   <?php include 'footer.php'?>

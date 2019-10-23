@@ -23,6 +23,7 @@
     justify-content: space-between;
     background-color: rgb(0, 0, 0);
     padding: 10px;
+    font-size: 16pt;
     width: 100%;
     align-items: center;
     flex-wrap: wrap;
@@ -39,7 +40,6 @@
 }
 .header-logo a{
     font-family: 'Times New Roman', Times, serif;
-    font-size: 24pt;
     padding: 10px;
     margin-left: 10px;
     color: gainsboro;
@@ -51,13 +51,10 @@
 .header-link{
     display: flex;
 }
-.header-link li{
-    margin-left: 20px;
-}
+
 .header-link li a{
     color: gainsboro;
-    font-family: Century Gothic;
-    font-size: 24pt;
+    font-family: 'Times New Roman', Times, serif;
     display: block;
     padding: 10px;
 }
@@ -65,38 +62,38 @@
     color: dimgray;
 }
 
-/* slide */
-.slideshow{
-    padding-top: 80px;
-}
-
 /* feed */
 
-/*welcome section */
+/* welcome section */
 
 .full-section{
     background-color: #121212;
     width: 100%;
     overflow: hidden;
     justify-content: center;
+    align-items: center;
     display: grid;
     padding: 5px;
     
 }
 
-.welcome-title{
+.full-section  h3{
     font-family: Times, Times New Roman, serif;
     font-size: 30pt;
+    color: gainsboro;
     text-align: center;
-    color: gainsboro; 
 
 }
-.welcome-text{
+.full-section  p{
     font-family: Snell Roundhand, serif;
     font-style: italic;
     font-size: 20pt;
     text-align: center;
-    color: gainsboro; 
+    color: gainsboro;
+}
+.full-section  img{
+    margin: auto;
+
 }
 
 
@@ -133,11 +130,10 @@
     padding: 20px;
     color: gainsboro;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 23pt;
+    font-size: 18pt;
 }
 .post-text h3{
     color: rgb(255, 255, 255);
-    font-size: 24pt;
 }
 
 
@@ -150,11 +146,11 @@
     justify-content: space-between;
     padding: 30px;
     text-align: left;
+    font-size: 14pt;
 }
 .footer a {
     font-family: 'Times New Roman', Times, serif;
     color: gainsboro;
-    font-size: 20pt;
     padding: 10px;
 }
 .footer a:hover{
@@ -163,7 +159,6 @@
 .footer p{
     font-family: 'Times New Roman', Times, serif;
     color: rgb(156, 156, 156);
-    font-size: 20pt;
     padding: 10px;
 }
 .footer ul{
@@ -197,7 +192,7 @@
     background-color: gainsboro;
     color: black;
     font-weight: bolder;
-    font-size: 20pt;
+    font-size: 14pt;
     border-radius: 5px;
     box-shadow: 4px 4px 16px black;
 }
@@ -207,7 +202,7 @@
     background-color: #969696;
     color: black;
     font-weight: bolder;
-    font-size: 20pt;
+    font-size: 14pt;
     border-radius: 5px;
     padding: 8px;
     box-shadow: 4px 4px 16px black;
@@ -265,7 +260,7 @@
 .pagination a{
     padding: 10px;
     color: black;
-    font-size: 20pt;
+    font-size: 14pt;
     font-weight: bolder;
 }
 
@@ -296,6 +291,12 @@
     .post-text h3{
         font-size: 30pt;
     }
+    .full-section  h3{
+        font-size: 50pt;
+    }
+    .full-section  p{
+        font-size: 35pt;
+    }
     .foto{
         margin: 60px;
         width: 100%;
@@ -307,6 +308,24 @@
     .whatsapp img{
         width: 120px;
         height: 120px;
+    }
+    .header{
+        font-size: 35pt;
+    }
+    .header-logo img{
+        height: 60px;
+    }
+    .footer{
+        font-size: 30pt;
+    }
+    .botao{
+        font-size: 30px;
+    }
+    .botao-active, .botao:hover {
+        font-size: 30px;
+    }
+    .pagination a{
+        font-size: 30pt;
     }
 }
 
