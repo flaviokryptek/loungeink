@@ -58,9 +58,24 @@
 .header-logo:hover a{
     color: dimgray;
 }
+.dropdownmenu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.dropdownmenu img{
+    width: 50px;
+    padding: 10px;
+}
+.dropdownmenu:hover .header-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}  
 
 .header-link{
-    display: flex;
+    display: none; 
 }
 
 .header-link li a{
@@ -326,10 +341,14 @@
         width: 110px;
     }
     .header{
-        font-size: 35pt;
+        font-size: 45pt;
     }
     .header-logo img{
-        height: 60px;
+        height: 100px;
+    }
+    .dropdownmenu img{
+        width: 100px;
+        margin-right: 20px;
     }
     .footer{
         font-size: 35pt;
