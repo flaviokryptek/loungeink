@@ -18,9 +18,10 @@
   
   <?php include 'header.php'?>
 
-  <div class="whatsapp">
-    <a href="https://api.whatsapp.com/send?phone=5565999781134&text=Olá"><img src="img/rede-social/whatsapp.png"></a>
-  </div>
+  <ul class="whatsapp">
+    <li><p>Fale conosco!</p></li>
+    <li><a href="https://api.whatsapp.com/send?phone=5565999781134&text=Olá"><img src="img/rede-social/whatsapp.png"></a></li>
+  </ul>
 
   <div class="main">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
