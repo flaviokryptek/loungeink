@@ -27,7 +27,7 @@
                 <?php
                     include '../conexao/conecta.php';
 
-                    $query = 'SELECT * FROM album';
+                    $query = 'SELECT * FROM album where id != 1';
                     $result = mysqli_query($conn, $query);
                     if($result){
                         while($row = mysqli_fetch_assoc($result)){

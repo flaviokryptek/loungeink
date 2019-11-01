@@ -24,7 +24,9 @@
   </ul>
 
   <div class="main">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+    <div class="slideshow">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
 
           <?php include 'conexao/conecta.php';
@@ -83,17 +85,14 @@
           <span class="sr-only">Proxima</span>
         </a>
       </div>
+            </div>
     
-
-    <div class="full-section">
-     
-      <h3>BEM-VINDO Á TATTOOARIA LOUNGE INK</h3>
-  
-      <img src="img/ornamento.png">
-    
-      <p>Limpo. Ousado. Profissional. Criativo.</p>
-      
-    </div>
+      <div class="section">
+        <div class="full-section">
+          <h3>BEM-VINDO Á TATTOOARIA LOUNGE INK</h3>
+          <p>Limpo. Ousado. Profissional. Criativo.</p>
+        </div>
+      </div>
 
     <?php include 'conexao/conecta.php';
      
@@ -138,15 +137,12 @@
   
     <?php }/* $count_feed ++; */} ?>
 
-    <section class="full-section">
-
-      <h3>FAÇA-NOS UMA VISITA</h3>
-    
-      <img src="img/ornamento.png">
-    
-      <p>Como chegar</p>
-   
-    </section>
+    <div class="section">
+      <div class="full-section">
+        <h3>FAÇA-NOS UMA VISITA</h3>
+        <p>Como chegar</p>
+      </div>
+    </div>
 
     <section class="post-section">
       <div class="gmaps">

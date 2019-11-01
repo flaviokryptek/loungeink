@@ -5,7 +5,7 @@
   <div class="header-logo">
     <img src="img/newlogo.png">
   
-    <a href="index.php">LOUNGE INK</a>
+    <a href="index.php">TATTOOARIA LOUNGE INK</a>
   </div>
 
   <nav class="dropdownmenu">

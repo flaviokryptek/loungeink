@@ -18,16 +18,16 @@
 
     $total_busca = mysqli_num_rows($resultado);
 
-    $quantidade_pg = 20;
+    $quantidade_pg = 24;
 
     $num_pagina = ceil($total_busca/$quantidade_pg);
 
     $inicio = ($quantidade_pg*$pagina)-$quantidade_pg;
 
     if($album != "Todas"){
-        $busca ="SELECT * FROM galeria WHERE album = '$album' LIMIT $inicio, $quantidade_pg ";
+        $busca ="SELECT * FROM galeria WHERE album = '$album' ORDER BY id DESC LIMIT $inicio, $quantidade_pg ";
     }else{
-        $busca ="SELECT * FROM galeria LIMIT $inicio, $quantidade_pg ";
+        $busca ="SELECT * FROM galeria ORDER BY id DESC LIMIT $inicio, $quantidade_pg  ";
     }
 
     $resultado = mysqli_query($conn,$busca);
@@ -56,7 +56,7 @@
     <li><p>Fale conosco!</p></li>
     <li><a href="https://api.whatsapp.com/send?phone=5565999781134&text=Olá"><img src="img/rede-social/whatsapp.png"></a></li>
   </ul>
-
+    <div class="slideshow">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
 
@@ -117,12 +117,13 @@
       </a>
 
     </div>
+    </div>
 
-    <section class="full-section">
+    <div class="section">
+      <div class="full-section">
 
       <h3>GALERIA DE FOTOS</h3>
-
-      <img src="img/ornamento.png">
+      <p>Categorias</p>
        
       <div class="filtro">
 
@@ -147,10 +148,10 @@
           </a>
 
       <?php  }} ?>
-
       </div>
 
-    </section>
+      </div>
+    </div>
 
     <div class="albumgaleria">
       <?php while($row = mysqli_fetch_assoc($resultado)){ ?>

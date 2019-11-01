@@ -25,9 +25,9 @@
     $inicio = ($quantidade_pg*$pagina)-$quantidade_pg;
 
     if($album != "Todas"){
-        $busca ="SELECT * FROM galeria WHERE album = '$album' LIMIT $inicio, $quantidade_pg ";
+        $busca ="SELECT * FROM galeria WHERE album = '$album' ORDER BY id DESC LIMIT $inicio, $quantidade_pg ";
     }else{
-        $busca ="SELECT * FROM galeria LIMIT $inicio, $quantidade_pg ";
+        $busca ="SELECT * FROM galeria ORDER BY id DESC LIMIT $inicio, $quantidade_pg ";
     }
 
     $resultado = mysqli_query($conn,$busca);
@@ -198,7 +198,7 @@
                             <?php
                             include '../conexao/conecta.php';
 
-                            $query = 'SELECT * FROM album';
+                            $query = 'SELECT * FROM album where id != 1';
                             $result = mysqli_query($conn, $query);
 
                             while($row = mysqli_fetch_assoc($result)){ ?>
