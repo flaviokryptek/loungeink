@@ -25,7 +25,7 @@
 
   <div class="main">
 
-    <div class="slideshow">
+    <div class="slideshow"> <!-- carrosel -->
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
 
@@ -85,12 +85,11 @@
           <span class="sr-only">Proxima</span>
         </a>
       </div>
-            </div>
+    </div> <!-- fim carrosel -->
     
       <div class="section">
         <div class="full-section">
           <h3>BEM-VINDO Á TATTOOARIA LOUNGE INK</h3>
-          <p>Limpo. Ousado. Profissional. Criativo.</p>
         </div>
       </div>
 
@@ -139,14 +138,61 @@
 
     <div class="section">
       <div class="full-section">
-        <h3>FAÇA-NOS UMA VISITA</h3>
-        <p>Como chegar</p>
+        <h3>NOSSOS ARTISTAS</h3>
       </div>
     </div>
 
     <section class="post-section">
-      <div class="gmaps">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.8321998694328!2d-57.496667557543184!3d-14.627155741891048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2ecdc0f90b16f446!2sTattooaria+Lounge+Ink!5e0!3m2!1spt-BR!2sbr!4v1548725950107" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+        
+      <div class="post-imagem">
+        <img src="img/noimage.png">
+      </div>
+    
+      <div class="post-text">
+        <ul>
+          <li> <h3>Nome Sobrenome</h3> </li>
+          <li> <p>BIOGRAFIA</p> </li>
+          <li> <a href="https://www.facebook.com/tattooarialoungeink/" target="_blank"><img src="img/rede-social/facebook2.png">Facebook</a></li>
+          <li> <a href="https://www.instagram.com/tattooarialoungeink/" target="_blank"><img src="img/rede-social/instagram2.png">Instagram</a></li>
+        </ul>
+      </div>
+          
+    </section>
+
+    <section class="post-section">
+        
+      <div class="post-imagem">
+        <img src="img/noimage.png">
+      </div>
+    
+      <div class="post-text">
+        <ul>
+          <li> <h3>Nome Sobrenome</h3> </li>
+          <li> <p>BIOGRAFIA</p> </li>
+          <li> <a href="https://www.facebook.com/tattooarialoungeink/" target="_blank"><img src="img/rede-social/facebook2.png">Facebook</a></li>
+          <li> <a href="https://www.instagram.com/tattooarialoungeink/" target="_blank"><img src="img/rede-social/instagram2.png">Instagram</a></li>
+        </ul>
+      </div>
+          
+    </section>
+
+    <div class="section">
+      <div class="full-section">
+        <h3>PATROCINADORES</h3>
+      </div>
+    </div>
+
+    <section class="post-section">
+      <div class="patrocinadores">
+        <a href="#"><img src="img/noimage.png"></a>
+        <a href="#"><img src="img/noimage.png"></a>
+        <a href="#"><img src="img/noimage.png"></a>
+        <a href="#"><img src="img/noimage.png"></a>
+        <a href="#"><img src="img/noimage.png"></a>
+        <a href="#"><img src="img/noimage.png"></a>
+        <a href="#"><img src="img/noimage.png"></a>
+        <a href="#"><img src="img/noimage.png"></a>
+        <a href="#"><img src="img/noimage.png"></a>
       </div>
     </section>
 

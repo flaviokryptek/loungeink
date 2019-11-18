@@ -1,5 +1,5 @@
-<footer class="footer mt-auto py-3">
-    <div class="container">
-        <span class="text-muted">Tattooaria Lounge Ink.</span>
+<footer class="footer">
+    <div>
+        <p>Tattooaria Lounge Ink</p>
     </div>
 </footer>

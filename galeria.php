@@ -34,7 +34,7 @@
 
     $total_busca = mysqli_num_rows($resultado);
     
-?>
+?> <!-- fim Paginação -->
 
 <!doctype html>
 <html>
@@ -56,7 +56,8 @@
     <li><p>Fale conosco!</p></li>
     <li><a href="https://api.whatsapp.com/send?phone=5565999781134&text=Olá"><img src="img/rede-social/whatsapp.png"></a></li>
   </ul>
-    <div class="slideshow">
+
+  <div class="slideshow"> <!-- carrosel -->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
 
@@ -117,7 +118,7 @@
       </a>
 
     </div>
-    </div>
+  </div> <!-- fim carrosel -->
 
     <div class="section">
       <div class="full-section">
@@ -157,14 +158,26 @@
       <?php while($row = mysqli_fetch_assoc($resultado)){ ?>
 
         
-          <div class="foto">
-           <img src='uploads/<?php echo $row['foto'];?>'>
+        <div class="foto">
+          <a href="#<?php echo $row['id'];?>"><img src='uploads/<?php echo $row['foto'];?>'></a>
+        </div>
+        <!-- modal -->
+        <div id="<?php echo $row['id'];?>" class="full-image">
+          
+          <div class="image">
+            <a href="#">X</a>
+            <img src='uploads/<?php echo $row['foto'];?>'>
+            
           </div>
-        
 
-        <?php } ?>
+        </div>
+
+      <?php } ?>
+    
+    </div>
       
-      </div>
+      
+      
 
     <!--Paginação--> 
     <div class="pagination">

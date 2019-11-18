@@ -32,63 +32,78 @@
 /* header */
 
 .header{
-    display: flex;
-    justify-content: space-between;
     background-color: rgb(0, 0, 0);
     padding: 10px;
-    font-size: 16pt;
     width: 100%;
-    align-items: center;
-    flex-wrap: wrap;
     position: fixed;
     z-index: 16;
+}
+.header a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gainsboro;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16pt;
+    padding: 10px;
+}
+.header a:hover{
+    color: dimgray;
+}
+
+.h-1{ /*header level1*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .header-logo{
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .header-logo img{
-    height: 40px;
-}
-.header-logo a{
-    font-family: 'Times New Roman', Times, serif;
-    padding: 10px;
-    margin-left: 10px;
-    color: gainsboro;
-}
-.header-logo:hover a{
-    color: dimgray;
+    height: 50px;
 }
 .dropdownmenu{
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+    
 }
 .dropdownmenu img{
-    width: 50px;
-    padding: 10px;
+    width: 30px;
 }
-.dropdownmenu:hover .header-link{
+.dropdownbtn{
+    display: none !important;
+}
+
+.h-2:target{ /* header level 2*/
     display: flex;
-    justify-content: center;
+}
+.h-2{
+    display: flex; 
     align-items: center;
-}  
-
-.header-link{
-    display: none; 
+    text-align: center;
+}
+.h-2 ul{
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.header-link li a{
-    color: gainsboro;
-    font-family: 'Times New Roman', Times, serif;
-    display: block;
-    padding: 10px;
+.cb{
+    display: none !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 24pt !important;
+    font-weight: bold;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    padding-left: 20px;
+    padding-right: 20px;
+    
 }
-.header-link li:hover a{
-    color: dimgray;
-}
+
 
 /* feed */
 
@@ -97,7 +112,7 @@
 
 .slideshow{
    
-    padding-top: 71px;
+    padding-top: 90px;
     margin-bottom: 80px;
 
 }
@@ -172,6 +187,19 @@
 .post-text h3{
     color: rgb(255, 255, 255);
 }
+.post-text a{
+    display: flex;
+    align-items: center;
+    color:gainsboro;
+}
+.post-text a:hover{
+    color: dimgray;
+}
+.post-text img{
+    margin-right: 10px;
+    width: 25px;
+    border-radius: 7px;
+}
 
 
 /* Footer */
@@ -201,7 +229,7 @@
     padding-bottom: 10px;
 }
 .footer ul{
-    width: 33%;
+    width: 20%;
 }
 .footer img{
     margin-right: 10px;
@@ -272,6 +300,45 @@
     
 
 }
+.foto a{
+    height: 300px;
+    width: 300px;
+}
+
+.full-image{
+    display: none;
+}
+.full-image:target{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.7);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+.image{
+    width: 40%;
+}
+
+.image img{
+    width: 100%;
+}
+.image a{
+    float: right;;
+    font-size: 20pt;
+    color: gainsboro;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-bottom: 10px;
+
+    border-radius: 30%;
+    border: 2px white solid;
+}
 /* paginação */
 
 .pagination{
@@ -309,19 +376,35 @@
     background-color: gainsboro;
 }
 
-/* gmaps */
+/* patrocinadores */
 
-.gmaps{
-    width: 100%;
-    height: 400px;
+.patrocinadores{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
+.patrocinadores a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 220px;
+    margin: 20px;
+    overflow: hidden;
+}
+.patrocinadores img{
+    width: 100%;
+}
+
+
 
 /* media */
 
 @media screen and (max-width: 1000px) and (min-height: 1100px){
     
     .slideshow{
-        padding-top: 120px;
+        padding-top: 140px;
     }
     .post-imagem{
         width: 100%;
@@ -334,11 +417,12 @@
     .post-text h3{
         font-size: 35pt;
     }
+    .post-text img{
+        width: 60px;
+        margin-right: 30px;
+    }
     .full-section h3{
         font-size: 50pt;
-    }
-    .full-section p{
-        font-size: 35pt;
     }
     .whatsapp p{
         font-size: 30pt;
@@ -349,15 +433,27 @@
     .whatsapp img:hover{
         width: 110px;
     }
-    .header{
+    .header a{
         font-size: 40pt;
     }
     .header-logo img{
         height: 100px;
     }
+    .cb{
+        display: unset !important;
+        font-size: 60pt !important;
+        padding-left: 40px !important;
+        padding-right: 20px !important;
+    }
+    .h-2{
+        display: none;
+    }
+    .dropdownbtn{
+        display: unset !important;
+        height: 100px;
+    }
     .dropdownmenu img{
-        width: 100px;
-        margin-right: 20px;
+        width: 80px;
     }
     .footer{
         font-size: 35pt;
@@ -385,10 +481,20 @@
     .albumgaleria{
         margin: 50px;
     }
-    .foto{
+    .foto , .foto a{
         height: 250px;
         width: 250px;
     }
+    .image a{
+        font-size: 40px;
+        font-weight: bold;
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+    .image{
+        width: 80%;
+    }
+    
 
 }
 
