@@ -114,11 +114,12 @@
    
     padding-top: 90px;
     margin-bottom: 80px;
-
+    margin-right: 150px;
+    margin-left: 150px;
 }
 
 .section{
-    background-image: url("../img/ambiente3602.png") ;
+    background-image: url("../img/hub360.jpeg") ;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -136,7 +137,7 @@
 }
 
 .full-section h3{
-   
+    text-shadow: 2px 2px 2px black;
     font-family: Times, Times New Roman, serif;
     font-size: 30pt;
     color: gainsboro;
@@ -160,6 +161,8 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: 80px;
+    margin-left: 150px;
+    margin-right: 150px;
     background-color: #222222;
 
 }
@@ -381,6 +384,8 @@
 .patrocinadores{
     display: flex;
     flex-wrap: wrap;
+    padding-left: 50px;
+    padding-right: 50px;
     justify-content: center;
     align-items: center;
 }
@@ -389,12 +394,15 @@
     justify-content: center;
     align-items: center;
     width: 220px;
-    height: 220px;
     margin: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgb(15, 15, 15);
     overflow: hidden;
+    
 }
 .patrocinadores img{
     width: 100%;
+    
 }
 
 
@@ -405,6 +413,12 @@
     
     .slideshow{
         padding-top: 140px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .post-section{
+        margin-left: 50px;
+        margin-right: 50px;
     }
     .post-imagem{
         width: 100%;

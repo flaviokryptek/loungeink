@@ -181,18 +181,16 @@
         <h3>PATROCINADORES</h3>
       </div>
     </div>
-
+    
     <section class="post-section">
       <div class="patrocinadores">
-        <a href="#"><img src="img/noimage.png"></a>
-        <a href="#"><img src="img/noimage.png"></a>
-        <a href="#"><img src="img/noimage.png"></a>
-        <a href="#"><img src="img/noimage.png"></a>
-        <a href="#"><img src="img/noimage.png"></a>
-        <a href="#"><img src="img/noimage.png"></a>
-        <a href="#"><img src="img/noimage.png"></a>
-        <a href="#"><img src="img/noimage.png"></a>
-        <a href="#"><img src="img/noimage.png"></a>
+        <?php 
+          $query_sponsors = "SELECT * FROM sponsors ORDER BY id ASC";
+          $result_sponsors = mysqli_query($conn, $query_sponsors);
+            
+          while($row_sponsors = mysqli_fetch_assoc($result_sponsors)){?>
+          <a href="<?php echo $row_sponsors['link']?>"><img src="uploads/sponsors/<?php echo $row_sponsors['imagem']?>"></a>
+        <?php }?>
       </div>
     </section>
 
