@@ -89,7 +89,10 @@
                 </li>
 
                 <li>
-                    <h3>Imagem</h3>
+                    <h3>Imagem atual</h3>
+                    <img src="../uploads/slides/<?php echo $slide_row['imagem']?>">
+                </li>
+                <li>
                     <input type="file" name="foto[]">
                 </li>
                 
@@ -99,7 +102,7 @@
                 </li>
             </ul>
             <span class='alert'>
-                <p><?php echo $alert ?></p>
+                <p><?php echo $alert; echo $test; ?></p>
             </span>
         </form>
     </div>

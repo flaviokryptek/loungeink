@@ -62,12 +62,18 @@
                     <a href="galeria.php?pagina=1&album=Todas">X</a>
                 </span>
                 <ul>
-                    <li><input type="file" required name="foto[]" multiple="multiple"></li>
-                    
-                    <li><?php include 'back-end/gallery_list_album_input.php'?></li>
                     <li>
-                        <button type="reset">Limpar</button>
-                        <button type="submit" name="submit_foto">Enviar</button>
+                        <h3>Foto</h3>
+                        <input type="file" required name="foto[]" multiple="multiple">
+                    </li>
+                    
+                    <li>
+                        <h3>Album</h3>
+                        <?php include 'back-end/gallery_list_album_input.php'?>
+                    </li>
+                    <li>
+                        <button class="reset_btn" type="reset"><a href="galeria.php?pagina=1&album=Todas">Cancelar</a></button>
+                        <button class="submit_btn" type="submit" name="submit_foto">Enviar</button>
                     </li>
                 </ul>
                 <span class='alert'>
@@ -84,12 +90,12 @@
             </span>
             <ul>
                 <li>
-                    <label for="nome">Nome</label>
-                    <input type="text" name="nome" required id="nome" placeholder="Nome do album">
+                    <h3>Album</h3>
+                    <input type="text" name="nome" required placeholder="Nome do album">
                 </li>
                 <li>
-                    <button type="reset">Limpar</button>
-                    <button type="submit" name="submit_album">Enviar</button>
+                    <button class="reset_btn" type="reset"><a href="galeria.php?pagina=1&album=Todas">Cancelar</a></button>
+                    <button class="submit_btn" type="submit" name="submit_album">Enviar</button>
                 </li>
             </ul>
             <span class='alert'>

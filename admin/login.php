@@ -19,8 +19,9 @@
 <body>
     
     <div class="login"><!-- login -->
-
+        
         <form method="POST" class="form">
+            <img src="../img/logo4.png">
             <ul>
                 <li><p>Painel de controle</p></li>
                 <li><input required placeholder="Usuário" name="usuario" type="text" autofocus></li>
