@@ -32,30 +32,14 @@
 /* header */
 
 .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: rgb(0, 0, 0);
     padding: 10px;
     width: 100%;
     position: fixed;
     z-index: 16;
-}
-.header a{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: gainsboro;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 16pt;
-    padding: 10px;
-}
-.header a:hover{
-    color: dimgray;
-}
-
-.h-1{ /*header level1*/
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
 }
 
 .header-logo{
@@ -66,41 +50,28 @@
 .header-logo img{
     height: 50px;
 }
-.dropdownmenu{
+
+.header nav ul{
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    
-}
-.dropdownmenu img{
-    width: 30px;
-}
-.dropdownbtn{
-    display: none !important;
 }
 
-.h-2:target{ /* header level 2*/
+.header nav ul li a{
     display: flex;
-}
-.h-2{
-    display: flex; 
     align-items: center;
-    text-align: center;
+    justify-content: center;
+    color: gainsboro;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16pt;
+    padding: 10px;
 }
-.h-2 ul{
-    display: flex;
-    flex-wrap: wrap;
+.header nav ul li:hover a{
+    color: dimgray;
 }
 
-.cb{
-    display: none !important;
-    font-family: Arial, Helvetica, sans-serif !important;
-    font-size: 24pt !important;
-    font-weight: bold;
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
-    padding-left: 20px;
-    padding-right: 20px;
+.header label, input{
+    display: none;
     
 }
 
@@ -447,28 +418,34 @@
     .whatsapp img:hover{
         width: 110px;
     }
-    .header a{
+
+    .header ul{
+        position: absolute;
+        right: -100%;
+        background-color: black;
+        transition: all .4s;
+        width: 100%;
+    }
+    .header nav ul li a{
         font-size: 40pt;
     }
     .header-logo img{
         height: 100px;
     }
-    .cb{
-        display: unset !important;
-        font-size: 60pt !important;
-        padding-left: 40px !important;
-        padding-right: 20px !important;
+    .header label{
+        display: unset;
+        font-size: 80px;
+        background-color: black;
+        text-align: center;
+        color: gainsboro;
+        cursor: pointer;
+        width: 60px;
+        height: 50px; 
     }
-    .h-2{
-        display: none;
+    #btn:checked ~ ul{
+        right: 0;
     }
-    .dropdownbtn{
-        display: unset !important;
-        height: 100px;
-    }
-    .dropdownmenu img{
-        width: 80px;
-    }
+    
     .footer{
         font-size: 35pt;
     }
