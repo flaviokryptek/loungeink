@@ -74,12 +74,17 @@ a{
 
 .header{
   position: fixed;
+  width: 100%;
+  background-color: rgb(212, 212, 212);
+}
+
+.header span{
   display: flex;
+  height: 50px;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  height: 50px;
-  background-color: rgb(212, 212, 212);
+  max-width: 1200px;
+  margin: auto;
 }
 .header-logo{
   display: flex;
@@ -90,13 +95,7 @@ a{
   height: 40px;
   padding: 5px;
 }
-.header a{
-  color: rgb(80, 80, 80);
-  padding: 5px 10px 5px 10px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14pt;
-  transition: all .4s;
-}
+
 .header nav{
   display: flex;
   justify-content: center;
@@ -105,13 +104,16 @@ a{
   
 }
 .header nav a{
-  color: rgb(73, 73, 73);
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(20, 20, 20);
+  padding: 5px;
   font-size: 12pt;
   margin-top: 5px;
   margin-bottom: 5px;
-  background-color: rgb(204, 204, 204);
+  background-color: rgb(180, 180, 180);
   border-left: 4px solid rgb(20, 98, 216);
-  
+  border-radius: 3px;
+  transition: all .4s;
 }
 .header nav a:hover{
   color: rgb(219, 219, 219);
@@ -130,7 +132,7 @@ a{
 
 }
 .header li{
-  margin-right: 15px;
+  margin-right: 8px;
 }
 
 .header #btn, label{
@@ -141,8 +143,13 @@ a{
 /* Footer */
 
 .footer{
+  
   background-color: rgb(212, 212, 212);
   width: 100%;
+}
+.footer div{
+  max-width: 1200px;
+  margin: auto;
 }
 .footer p{
   color: rgb(80, 80, 80);
@@ -157,12 +164,9 @@ a{
 .index{
   display: flex;
   align-items: center;
-  padding-top: 150px;
-  padding-bottom: 500px;
+  padding-bottom: 600px;
 }
-.index ul{
-  margin-left: 100px;
-}
+
 .index h1{
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(192, 192, 192);
@@ -183,7 +187,7 @@ a{
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.menu a{
+.menu .btn{
   padding: 10px;
   margin-right: 20px;
   background-color: rgb(137, 233, 113);
@@ -193,16 +197,40 @@ a{
   border-radius: 5px;
 
 }
-.menu a:hover{
+.menu .btn:hover{
   background-color: rgb(137, 255, 108);
   box-shadow: 2px 2px 10px rgb(182, 255, 164);
  
 }
 
+.menu .edit_btn{
+  background-color: rgb(233, 211, 113);
+}
+.menu .edit_btn:hover{
+  background-color: rgb(255, 235, 144);
+  box-shadow: 2px 2px 10px rgb(233, 217, 145);
+ 
+}
+.menu input{
+  display: none;
+}
+.edit_btn{
+  display: unset;
+}
+
+#del_album{
+  display: none;
+}
+
+#del_photo{
+  display: none;
+}
+
 /* Action */
 
+
 .editar{
-  margin-top: 10px;
+  
   padding: 4px;
   padding-left: 10px;
   padding-right: 10px;
@@ -217,7 +245,7 @@ a{
   box-shadow: 2px 2px 10px rgb(255, 213, 123);
 }
 .excluir{
-  margin-top: 10px;
+  
   padding: 4px;
   padding-left: 10px;
   padding-right: 10px;
@@ -235,12 +263,15 @@ a{
 /* Content */
 
 .content{
+  margin: auto;
   padding-top: 100px;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-bottom: 100px;
+  padding-bottom: 50px;
+  max-width: 900px;
+  
 }
+
 /* Table */
+
 .table{
   background-color: rgb(241, 241, 241);
   width: 100%;
@@ -250,21 +281,21 @@ a{
 .table h3{
   color: rgb(0, 0, 0);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 12pt;
+  font-size: 10pt;
   margin: unset;
 }
 .table p{
   color: rgb(0, 0, 0);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 12pt;
+  font-size: 10pt;
 }
-.table tbody td{
-  padding: 10px;
+.table td{
+  padding: 4px;
   text-align: center;
   border-top: 2px solid black;
 }
 .table img{
-  height: 100px;
+  max-width: 100px;
 }
 
 /* Alert */
@@ -301,8 +332,7 @@ a{
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  margin-right: 20px;
-  margin-top: 15px;
+  margin: 15px;
   background-color: rgb(157, 171, 255);
   font-family: Arial, Helvetica, sans-serif; 
   border-radius: 5px;
@@ -312,7 +342,7 @@ a{
   padding-left: 10px;
   padding-right: 10px;
   color: rgb(0, 0, 0);
-  font-size: 12pt;
+  font-size: 10pt;
 }
 .album .del_album{
   font-weight: bold;
@@ -372,6 +402,15 @@ a{
   color: rgb(110, 110, 110);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 10pt;
+}
+.foto .del_photo{
+  font-size: 12pt;
+  padding: 5px 10px 5px 10px;
+  font-weight: bold;
+  color: rgb(39, 39, 39);
+}
+.foto .del_photo:hover{
+  color: rgb(255, 71, 71);  
 }
 
 .pagination{
@@ -451,7 +490,7 @@ a{
   color: rgb(201, 83, 83);
 }
 .modal li{
-  padding: 20px;
+  padding: 10px;
   max-width: 500px;
 }
 .modal li h3{
@@ -460,6 +499,14 @@ a{
   font-size: 12pt;
   margin: unset;
   margin-bottom: 10px;
+}
+.modal input{
+  width: 500px;
+  height: 20px;
+}
+.modal textarea{
+  width: 500px;
+  height: 80px;
 }
 .modal li p{
   color: rgb(0, 0, 0);
@@ -530,37 +577,4 @@ a{
 .modal .del_btn:hover{
   background-color: rgb(255, 88, 88);
   box-shadow: 2px 2px 10px rgb(236, 60, 60);
-}
-
-@media screen and (max-width: 1000px) and (min-height: 1100px){
-
-  .header-logo a{
-    font-size: 10pt;
-  }
-  .header nav ul{
-    position: absolute;
-    right: -100%;
-    background-color: black;
-    transition: all .4s;
-    width: 100%;
-  }
-  .header nav ul li a{
-      font-size: 40pt;
-  }
-  .header-logo img{
-      height: 100px;
-  }
-  .header label{
-    display: unset;
-    font-size: 80px;
-    text-align: center;
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-    width: 60px;
-    height: 50px; 
-  }
-  #btn:checked ~ ul{
-      right: 0;
-  }
-
 }

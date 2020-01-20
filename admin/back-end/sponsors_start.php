@@ -59,10 +59,10 @@
                 $result = mysqli_query($conn, $insere);
                 
                 if($result){
-                    $alert = 'Patrocinadores adcionado com sucesso!';
+                    $alert = 'Patrocinadores adicionado com sucesso!';
                 
                 }else{
-                    $alert = 'Erro ao adcionar patrocinadores! Por favor, tente novamente.';
+                    $alert = 'Erro ao adicionar patrocinadores! Por favor, tente novamente.';
                 }
             }
         }

@@ -18,7 +18,7 @@
 
     $total_busca = mysqli_num_rows($resultado);
 
-    $quantidade_pg = 20;
+    $quantidade_pg = 30;
 
     $num_pagina = ceil($total_busca/$quantidade_pg);
 

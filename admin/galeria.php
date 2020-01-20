@@ -17,7 +17,9 @@
     <meta name="description" content="Pagina inicial - Painel de controle">
     <link href="../img/logo.jpg" rel="icon">
     <meta name="author" content="Flávio Lourenço">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/desktop.css" media="only screen and (min-width:600px)" rel="stylesheet">
+    <link href="css/mobile.css" media="only screen and (max-width:600px)" rel="stylesheet">
+    <script src="js/front_end.js"></script>
 
 </head>
 
@@ -27,8 +29,10 @@
     <main class="content">
         <div class="menu">
             <nav>
-                <a href="#submit_foto">+ Foto</a>
-                <a href="#submit_album">+ Album</a>
+                <a class="btn" href="#submit_foto">+ Foto</a>
+                <a class="btn" href="#submit_album">+ Album</a>
+                <input type="checkbox" id="edit_btn" onclick="show_del_btn()">
+                <label class="btn edit_btn" for="edit_btn">Editar</label>
             </nav>
         </div>
         <div class="album">
@@ -59,7 +63,7 @@
         <div>
             <form method="post" enctype="multipart/form-data">
                 <span class="close_btn">
-                    <a href="galeria.php?pagina=1&album=Todas">X</a>
+                    <a href="galeria.php?pagina=1&album=Todas">✖</a>
                 </span>
                 <ul>
                     <li>
@@ -69,7 +73,9 @@
                     
                     <li>
                         <h3>Album</h3>
-                        <?php include 'back-end/gallery_list_album_input.php'?>
+                        <ul class="album_input">
+                            <?php include 'back-end/gallery_list_album_input.php'?>
+                        </ul>
                     </li>
                     <li>
                         <button class="reset_btn" type="reset"><a href="galeria.php?pagina=1&album=Todas">Cancelar</a></button>
@@ -86,7 +92,7 @@
     <div class="modal" id="submit_album">
         <form method="post" enctype="multipart/form-data">
             <span class="close_btn">
-                <a href="galeria.php?pagina=1&album=Todas">X</a>
+                <a href="galeria.php?pagina=1&album=Todas">✖</a>
             </span>
             <ul>
                 <li>

@@ -11,4 +11,5 @@
             <td><a class="editar" href="feed.php?id=<?php echo $row_feed_list['id']?>#edit_feed">Editar</a></td>
             <td><a class="excluir" href="feed.php?id=<?php echo $row_feed_list['id'];?>#del_feed">Excluir</a></td>
         </tr>
+       
 <?php } } ?>

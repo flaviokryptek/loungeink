@@ -45,10 +45,10 @@
                 $result = mysqli_query($conn, $insere);
                 
                 if($result){
-                    $alert = 'Slide adcionado com sucesso!';
+                    $alert = 'Slide adicionado com sucesso!';
                 
                 }else{
-                    $alert = 'Erro ao adcionar slide! Por favor, tente novamente.';
+                    $alert = 'Erro ao adicionar slide! Por favor, tente novamente.';
                 }
                 }
                 //Se houver mensagens de erro, exibe-as

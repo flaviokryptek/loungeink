@@ -17,7 +17,8 @@
     <meta name="description" content="Pagina dos patrocinadores - Painel de controle">
     <link href="../img/logo.jpg" rel="icon">
     <meta name="author" content="Flávio Lourenço">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/desktop.css" media="only screen and (min-width:600px)" rel="stylesheet">
+    <link href="css/mobile.css" media="only screen and (max-width:600px)" rel="stylesheet">
 
 </head>
 
@@ -27,7 +28,7 @@
     <main class="content">
     <div class="menu">
         <nav>
-            <a href="#submit_sponsors">+ Patrocinadores</a>
+            <a class="btn" href="#submit_sponsors">+ Patrocinadores</a>
         </nav>
     </div>
     <table class="table">
@@ -52,17 +53,17 @@
     <div class="modal" id="submit_sponsors">
         <form method="post" enctype="multipart/form-data">
             <span class="close_btn">
-                <a href="sponsors.php">X</a>
+                <a href="sponsors.php">✖</a>
             </span>
             <ul>
                 <li>
                     <h3>Nome</h3>
-                    <input type="text" name="nome" required size="60" placeholder="Nome do patroinador">
+                    <input type="text" name="nome" required placeholder="Nome do patroinador">
                 </li>
 
                 <li>
                     <h3>Link</h3>
-                    <textarea name="link" required rows="2" cols="60" placeholder="Link do patrocinador"></textarea>
+                    <textarea name="link" required placeholder="Link do patrocinador"></textarea>
                 </li>
 
                 <li>
@@ -85,18 +86,18 @@
     <div class="modal" id="edit_sponsors">
         <form method="post" enctype="multipart/form-data">
             <span class="close_btn">
-                <a href="sponsors.php">X</a>
+                <a href="sponsors.php">✖</a>
             </span>
             <ul>
                 <input type="hidden" name="id" required value="<?php echo $sponsors_row['id']; ?>">
                 <li>
                     <h3>Nome</h3>
-                    <input type="text" name="nome" size ="60" value="<?php echo $sponsors_row['nome'];?>">
+                    <input type="text" name="nome" value="<?php echo $sponsors_row['nome'];?>">
                 </li>
 
                 <li>
                     <h3>Link</h3>
-                    <textarea name="link" rows="2" cols="60"><?php echo $sponsors_row['link'];?></textarea>
+                    <textarea name="link" ><?php echo $sponsors_row['link'];?></textarea>
                 </li>
 
                 <li>   
@@ -122,7 +123,7 @@
     <div class="modal" id="del_sponsors">
         <form method="post" enctype="multipart/form-data">
             <span class="close_btn">
-                <a href="sponsors.php">X</a>
+                <a href="sponsors.php">✖</a>
             </span>
 
             <input type="hidden" name="id" required value="<?php echo $sponsors_row['id']; ?>">

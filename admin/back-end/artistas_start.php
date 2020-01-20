@@ -3,24 +3,26 @@
     $alert=false;
     $id=false;
     
-    if(isset($_GET["id"])){ // fetch feed by id start
+    if(isset($_GET["id"])){ // fetch artistas by id start
         $id = $_GET["id"];
         
-        $query_feed = "SELECT * FROM feed WHERE id = $id LIMIT 1";
-        $result_feed_id = mysqli_query($conn, $query_feed);
-        if($result_feed_id){ 
-            $feed_row = mysqli_fetch_assoc($result_feed_id);
+        $query_artistas = "SELECT * FROM artistas WHERE id = $id LIMIT 1";
+        $result_artistas_id = mysqli_query($conn, $query_artistas);
+        if($result_artistas_id){ 
+            $artistas_row = mysqli_fetch_assoc($result_artistas_id);
         }else{
-            $alert = 'Post não encontrado, tente novamente!';
+            $alert = 'Artista não encontrado, tente novamente!';
         }
-    }//fetch feed by id end
+    }//fetch artistas by id end
     
 
-    if (isset($_POST['submit_feed'])){//feed submit start
+    if (isset($_POST['submit_artistas'])){//artistas submit start
 
         $foto = $_FILES['foto'];
-        $nome = $_POST['titulo'];
-        $descricao = $_POST['texto'];
+        $nome = $_POST['nome'];
+        $biografia = $_POST['biografia'];
+        $facebook = $_POST['facebook'];
+        $instagram = $_POST['instagram'];
         
         for ($k = 0; $k < count($foto['name']); $k++){
 
@@ -52,17 +54,17 @@
                 //gera um nome único para a imagem
                 $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
                 //caminho onde ficara a imagem
-                $caminho_imagem = "../uploads/feed/" . $nome_imagem;
+                $caminho_imagem = "../uploads/artistas/" . $nome_imagem;
                 //Faz o upload da imagem para seu respectivo caminho
                 move_uploaded_file($foto["tmp_name"][$k], $caminho_imagem);
-                $insere = "INSERT INTO feed (titulo, texto, imagem) values ('$nome','$descricao','$nome_imagem')";
+                $insere = "INSERT INTO artistas (nome, foto, biografia, facebook, instagram) values ('$nome','$nome_imagem','$biografia','$facebook','$instagram')";
                 $result = mysqli_query($conn, $insere);
                 
                 if($result){
-                    $alert = 'Post adicionado com sucesso!';
+                    $alert = 'Artista adicionado com sucesso!';
                 
                 }else{
-                    $alert = 'Erro ao adicionar post! Por favor, tente novamente.';
+                    $alert = 'Erro ao adicionar artista! Por favor, tente novamente.';
                 }
             }
         }
@@ -73,22 +75,23 @@
             $alert = $erro;
             }
         }
-    }//feed submit end
+    }//artistas submit end
     
     
     
-    if (isset($_POST['edit_feed'])){//feed edit start
+    if (isset($_POST['edit_artistas'])){//artistas edit start
 
         $foto = $_FILES['foto'];
-        $nome = $_POST['titulo'];
-        $descricao = $_POST['texto'];
-        $id = $_POST['id'];
+        $nome = $_POST['nome'];
+        $biografia = $_POST['biografia'];
+        $facebook = $_POST['facebook'];
+        $instagram = $_POST['instagram'];
     
         for ($k = 0; $k < count($foto['name']); $k++){
     
         if($foto["name"][$k] != false){
     
-            unlink("../uploads/feed/$feed_foto");
+            unlink("../uploads/artistas/$artistas_foto");
     
         if(!empty($foto["name"][$k])){
             $largura = 4920;
@@ -119,11 +122,11 @@
                 //gera um nome único para a imagem
                 $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
                 //caminho onde ficara a imagem
-                $caminho_imagem = "../uploads/feed/" . $nome_imagem;
+                $caminho_imagem = "../uploads/artistas/" . $nome_imagem;
                 
                 //Faz o upload da imagem para seu respectivo caminho
                 move_uploaded_file($foto["tmp_name"][$k], $caminho_imagem);
-                $insere = "UPDATE feed SET titulo = '$nome', imagem = '$nome_imagem', texto = '$descricao' WHERE id = '$id'";
+                $insere = "UPDATE artistas SET nome = '$nome', foto = '$nome_imagem', biografia = '$biografia', facebook='$facebook', instagram='$instagram' WHERE id = '$id'";
                 
                 $result = mysqli_query($conn, $insere);
                 
@@ -137,34 +140,34 @@
             }
     
         }else{
-            $insere = "UPDATE feed SET titulo='$nome', texto='$descricao' WHERE id = '$id'";
+            $insere = "UPDATE artistas SET nome='$nome', biografia='$biografia',facebook='$facebook', instagram='$instagram' WHERE id = '$id'";
             $result = mysqli_query($conn, $insere);
     
         }
         if($result){
             
-            $alert = 'Post editado com sucesso!';
+            $alert = 'Artista editado com sucesso!';
         
         }else{
-            $alert = 'Erro ao editar post! Por favor, tente novamente.';
+            $alert = 'Erro ao editar artista! Por favor, tente novamente.';
         }
     
         }
-    }//feed edit end
+    }//artistas edit end
 
-    if(isset($_POST["del_feed"])){//feed del start
-        $foto = $_FILES['imagem'];
+    if(isset($_POST["del_artistas"])){//artistas del start
+        $foto = $_FILES['foto'];
         $id = $_POST['id'];
 
-        unlink("../uploads/feed/$foto");
+        unlink("../uploads/artistas/$foto");
 
-        $query = "DELETE FROM feed WHERE id = $id";
+        $query = "DELETE FROM artistas WHERE id = $id";
         $result = mysqli_query($conn, $query);
 
         if($result){ 
-            $alert = 'Post apagado!';
+            $alert = 'Artista excluido com sucesso!';
         }else{
-            $alert = 'Erro ao apagar post, tente novamente!';
+            $alert = 'Erro ao excluir artista, tente novamente!';
         }
-    }//feed del end
+    }//artistas del end
 ?>

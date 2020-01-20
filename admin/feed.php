@@ -17,7 +17,8 @@
     <meta name="description" content="Pagina inicial - Painel de controle">
     <link href="../img/logo.jpg" rel="icon">
     <meta name="author" content="Flávio Lourenço">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/desktop.css" media="only screen and (min-width:600px)" rel="stylesheet">
+    <link href="css/mobile.css" media="only screen and (max-width:600px)" rel="stylesheet">
 
 </head>
 
@@ -27,7 +28,7 @@
     <main class="content">
     <div class="menu">
         <nav>
-            <a href="#submit_feed">+ Feed</a>
+            <a class="btn" href="#submit_feed">+ Feed</a>
         </nav>
     </div>
     <table class="table">
@@ -53,17 +54,17 @@
     <div class="modal" id="submit_feed">
         <form method="post" enctype="multipart/form-data">
             <span class="close_btn">
-                <a href="feed.php">X</a>
+                <a href="feed.php">✖</a>
             </span>
             <ul>
                 <li>
                     <h3>Titulo</h3>
-                    <input type="text" name="titulo" required size="60" placeholder="Titulo do post">
+                    <input type="text" name="titulo" required placeholder="Titulo do post">
                 </li>
 
                 <li>
                     <h3>Texto</h3>
-                    <textarea name="texto" required rows="6" cols="60" placeholder="Digite aqui o texto do post"></textarea>
+                    <textarea name="texto" required placeholder="Digite aqui o texto do post"></textarea>
                 </li>
 
                 <li>
@@ -86,18 +87,18 @@
     <div class="modal" id="edit_feed">
         <form method="post" enctype="multipart/form-data">
             <span class="close_btn">
-                <a href="feed.php">X</a>
+                <a href="feed.php">✖</a>
             </span>
             <ul>
                 <input type="hidden" name="id" required value="<?php echo $feed_row['id']; ?>">
                 <li>
                     <h3>Titulo</h3>
-                    <input type="text" name="titulo" size ="60" value="<?php echo $feed_row['titulo'];?>">
+                    <input type="text" name="titulo" value="<?php echo $feed_row['titulo'];?>">
                 </li>
 
                 <li>
                     <h3>Texto</h3>
-                    <textarea name="texto" rows="6" cols="60"><?php echo $feed_row['texto'];?></textarea>
+                    <textarea name="texto" ><?php echo $feed_row['texto'];?></textarea>
                 </li>
 
                 <li>   
@@ -123,7 +124,7 @@
     <div class="modal" id="del_feed">
         <form method="post" enctype="multipart/form-data">
             <span class="close_btn">
-                <a href="feed.php">X</a>
+                <a href="feed.php">✖</a>
             </span>
 
             <input type="hidden" name="id" required value="<?php echo $feed_row['id']; ?>">

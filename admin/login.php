@@ -12,7 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Pagina de login">
     <meta name="author" content="Flávio Lourenço">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/desktop.css" media="only screen and (min-width:500px)" rel="stylesheet">
+    <link href="css/mobile.css" media="only screen and (max-width:500px)" rel="stylesheet">
 
 </head>
 

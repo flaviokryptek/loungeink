@@ -17,7 +17,8 @@
     <meta name="description" content="Slide - Painel de controle">
     <link href="../img/logo.jpg" rel="icon">
     <meta name="author" content="Flávio Lourenço">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/desktop.css" media="only screen and (min-width:600px)" rel="stylesheet">
+    <link href="css/mobile.css" media="only screen and (max-width:600px)" rel="stylesheet">
 
 </head>
 
@@ -27,7 +28,7 @@
     <main class="content">
         <div class="menu">
             <nav>
-                <a href="#submit_slide">+ Slide</a>
+                <a class="btn" href="#submit_slide">+ Slide</a>
             </nav>
         </div>
         <table class="table">
@@ -52,7 +53,7 @@
     <div class="modal" id="submit_slide">
         <form method="post" enctype="multipart/form-data">
             <span class="close_btn">
-                <a href="slide.php">X</a>
+                <a href="slide.php">✖</a>
             </span>
             <ul>
                 <li>
@@ -79,7 +80,7 @@
     <div class="modal" id="edit_slide">
         <form method="post" enctype="multipart/form-data">
             <span class="close_btn">
-                <a href="slide.php">X</a>
+                <a href="slide.php">✖</a>
             </span>
             <ul>
                 <input type="hidden" name="id" required value="<?php echo $slide_row['id']?>">
@@ -110,7 +111,7 @@
     <div class="modal" id="del_slide">
         <form method="post" enctype="multipart/form-data">
             <span class="close_btn">
-                <a href="slide.php">X</a>
+                <a href="slide.php">✖</a>
             </span>
 
             <input type="hidden" name="id" required value="<?php echo $slide_row['id']; ?>">

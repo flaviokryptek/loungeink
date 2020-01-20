@@ -13,18 +13,22 @@
     <meta name="description" content="Pagina inicial - Painel de controle">
     <link href="../img/logo.jpg" rel="icon">
     <meta name="author" content="Flávio Lourenço">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/desktop.css" media="only screen and (min-width:600px)" rel="stylesheet">
+    <link href="css/mobile.css" media="only screen and (max-width:600px)" rel="stylesheet">
 
 </head>
 
 <body>
 
     <?php include 'header.php'?>
-    <main class="index">
-        <ul>
-            <li><h1>Pagina Inicial</h1></li>
-            <li><p>Ola! <?php echo $_SESSION["name"];?></p></li>
-        </ul>
+    <main class="content">
+        <div class="index">
+            <ul>
+                <li><h1>Pagina Inicial</h1></li>
+                <li><p>Bem vindo(a) <?php echo $_SESSION["name"];?>!</p></li>
+                <li><p>Use o menu acima para navegar entre as páginas.</p></li>
+            </ul>
+        </div>
     </main>
     <?php include 'footer.php'?>
 

@@ -10,12 +10,12 @@
     if($ativo == $row['nome']){?>
         <span class="active">
             <a href='galeria.php?pagina=1&album=<?php echo $ativo?>'><?php echo $ativo?></a> 
-            <a class="del_album" href="back-end/gallery_del_album.php?id=<?php echo $row['id'];?>">✖</a>
+            <a id="del_album" class="del_album" href="back-end/gallery_del_album.php?id=<?php echo $row['id'];?>">✖</a>
         </span>
     <?php }else{ ?>   
         <span>
             <a href='galeria.php?pagina=1&album=<?php echo $row['nome']?>'><?php echo $row['nome']?></a>
-            <a class="del_album" href="back-end/gallery_del_album.php?id=<?php echo $row['id']?>">✖</a>
+            <a id="del_album" class="del_album" href="back-end/gallery_del_album.php?id=<?php echo $row['id']?>">✖</a>
         </span>
     <?php }}
 
