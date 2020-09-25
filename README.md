@@ -22,7 +22,7 @@ The navigation bar take you to gallery page and for the contact links.
 The whatsapp button is directly linked with the lounge number.
 
 ![](img/website/home.PNG)
-![](img/website/home 1.PNG)
+![](img/website/home01.PNG)
 ![](img/website/artists.PNG)
 ![](img/website/sponsors.PNG)
 
