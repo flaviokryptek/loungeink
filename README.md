@@ -1,7 +1,7 @@
 # Tattoo Lounge
 Website developed for marketing end publishing a tattoo lounge.
 
-# The start page
+# The Start Page
 Here you have information about the services provided, the environment, lounge and contact links.
 
 The navigation bar take you to gallery page and for the contact links.
