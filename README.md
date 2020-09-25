@@ -21,7 +21,7 @@ Here you have information about the services provided, the environment, lounge a
 The navigation bar take you to gallery page and for the contact links.
 The whatsapp button is directly linked with the lounge number.
 
-![](img/website/home.png)
+![](img/website/home.PNG)
 ![](img/website/home1.png)
 ![](img/website/artists.png)
 ![](img/website/sponsors.png)
