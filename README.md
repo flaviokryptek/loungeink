@@ -24,7 +24,7 @@ The whatsapp button is directly linked with the lounge number.
 ![](img/website/home.PNG)
 ![](img/website/home01.PNG)
 ![](img/website/artists.PNG)
-![](img/website/sponsors.PNG)
+![](img/website/sponsors1.PNG)
 
 # Photo Gallery
 This page show photos of the latest work done in the tattoo studio.
