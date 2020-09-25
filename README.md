@@ -55,4 +55,5 @@ Modals to create, update and delete
 ![](img/admin/delete.PNG)
 
 *This was my first website and system development project, i appreciate any suggestion or feedback.*
-*Tank you to read ;)*
+
+*Thank you to read!* ❤️
