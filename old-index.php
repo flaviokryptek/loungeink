@@ -29,25 +29,50 @@
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
 
-            <li data-target="#carouselExampleIndicators" data-slide-to="slide01"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="slide02"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="slide03"></li>
+          <?php include 'conexao/conecta.php';
+
+          $ativo = 2;
+          $slide = 1;
+
+          $query = "SELECT * FROM carousel ORDER BY id ASC";
+          $result = mysqli_query($conn, $query);
+
+          while($row = mysqli_fetch_assoc($result)){
+          if($ativo == 2){?>
+
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+
+          <?php $ativo= 1; }else{?>
+
+            <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $slide; ?>"></li>
+
+          <?php $slide++; }}?>
           
         </ol>
 
         <div class="carousel-inner" role="listbox">
 
-          <div class="carousel-item">
-            <img src="img/postfoto01.png" class="d-block w-100" alt="slide01">
-          </div>
+          <?php include 'conexao/conecta.php';
 
-          <div class="carousel-item">
-            <img src="img/fernando01.png" class="d-block w-100" alt="slide02">
-          </div>
+          $ativo = 2;
 
-          <div class="carousel-item">
-            <img src="img/local.PNG" class="d-block w-100" alt="slide03">
-          </div>
+          $query = "SELECT * FROM carousel ORDER BY id ASC";
+          $result = mysqli_query($conn, $query);
+          
+          while($row = mysqli_fetch_assoc($result)){
+            if($ativo == 2){?>
+
+              <div class="carousel-item active">
+                <img src="uploads/slides/<?php echo $row['imagem'];?>" class="d-block w-100" alt="<?php echo $row['foto'];?>">
+              </div>
+
+            <?php $ativo= 1; }else{?>
+
+              <div class="carousel-item">
+                <img src="uploads/slides/<?php echo $row['imagem'];?>" class="d-block w-100" alt="<?php echo $row['foto'];?>">
+              </div>
+
+          <?php }}?>
 
         </div>
 
