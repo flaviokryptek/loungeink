@@ -29,7 +29,7 @@
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
 
-          <?php include 'conexao/conecta.php';
+          <?php //include 'conexao/conecta.php';
 
           $ativo = 2;
           $slide = 1;
@@ -52,7 +52,7 @@
 
         <div class="carousel-inner" role="listbox">
 
-          <?php include 'conexao/conecta.php';
+          <?php //include 'conexao/conecta.php';
 
           $ativo = 2;
 
@@ -93,7 +93,7 @@
         </div>
       </div>
 
-    <?php include 'conexao/conecta.php';
+    <?php //include 'conexao/conecta.php';
      
       $feed_query = "SELECT * FROM feed ORDER BY id ASC";
       $resultado = mysqli_query($conn, $feed_query);
